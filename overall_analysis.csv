@@ -1,0 +1,801 @@
+index,image,caption,Text Retrieval,Image Retrieval,Both image-text retrieval,True Pair Score,False Pair Score,RoBERTa Likelihood,AMR Length,No. of Obj-Relations,Nouns,Verbs,Adjectives
+237,118/1.jpg,heart-shaped food on circular wood,True,True,True,0.016,0.014,39.690,5,19,"person, person",kisses,"old, young"
+236,118/0.jpg,circular food on heart-shaped wood,False,False,False,0.015,0.015,39.500,5,17,"person, person",kisses,"young, old"
+328,164/0.jpg,mind in the clouds,True,True,True,0.020,0.017,40.851,10,23,"person, person",hugs,"taller, shorter"
+329,164/1.jpg,clouds in the mind,False,False,False,0.022,0.023,40.730,10,7,"person, person",hugs,"shorter, taller"
+191,95/1.jpg,hammering a hand,True,True,True,0.004,0.003,38.233,6,11,"wrestler, wrestler","hits, unmasked",masked
+190,95/0.jpg,handing a hammer,False,False,False,0.025,0.026,38.140,8,7,"wrestler, wrestler",hits,"unmasked, masked"
+551,275/1.jpg,death of star,True,True,True,0.024,0.026,39.405,3,5,"person, animal",watches,
+550,275/0.jpg,star of death,False,False,False,0.019,0.019,38.899,3,5,"animal, person",watches,
+566,283/0.jpg,rough outside but smooth inside,True,True,True,0.014,0.011,36.799,7,14,"person, earrings, person, earrings",pays,
+567,283/1.jpg,smooth outside but rough inside,False,False,False,0.024,0.032,37.377,8,12,"person, earrings, person, earrings",pays,
+146,73/0.jpg,watching the present,True,True,True,0.013,0.017,42.762,3,6,"bird, snake",eats,
+147,73/1.jpg,presenting the watch,False,False,False,0.024,0.023,42.226,3,3,"snake, bird",eats,
+527,263/1.jpg,poor unfortunate people,True,True,True,0.016,0.014,34.523,9,3,"plant, organism, organism, plant, pieces","was, harmed, broke",
+526,263/0.jpg,unfortunate poor people,False,False,False,0.013,0.021,35.675,9,0,"organism, plant, plant, organism, pieces","was, harmed, broke",
+305,152/1.jpg,honey holding spoon,False,True,False,0.031,0.029,33.180,3,0,"bottle, water",is,
+304,152/0.jpg,spoon holding honey,True,False,False,0.021,0.021,42.331,2,5,"water, bottle",is,
+325,162/1.jpg,lights underneath a person,True,True,True,0.022,0.023,41.040,3,6,"tree, car",smashed,
+324,162/0.jpg,a person underneath lights,False,False,False,0.031,0.033,42.008,3,9,"car, tree",smashed,
+299,149/1.jpg,house boat,True,True,True,0.018,0.019,34.675,3,9,"people, leaves",fall,
+298,149/0.jpg,boat house,False,False,False,0.017,0.016,36.813,3,9,"leaves, people",fall,
+666,333/0.jpg,fishing for compliments,True,True,True,0.010,0.010,37.618,4,2,"sail, water",rests,
+667,333/1.jpg,compliments for fishing,False,False,False,0.029,0.029,35.652,4,4,"water, sail",rests,
+198,99/0.jpg,the dog wears as a hat what someone would normally bite,True,True,True,0.011,0.011,32.852,3,20,"table, someone",is,
+199,99/1.jpg,the dog bites what someone would normally wear as a hat,False,False,False,0.019,0.020,32.400,3,7,"someone, table",is,
+781,390/1.jpg,one bodies share with two head,True,True,True,0.021,0.020,36.063,5,2,"image, computer, top, books",shows,
+780,390/0.jpg,two bodies share with one head,False,False,False,0.026,0.027,36.261,5,2,"image, books, top, computer",shows,
+789,394/1.jpg,on feet standing,False,True,False,0.024,0.025,41.124,3,7,"caterpillar, plants",,
+788,394/0.jpg,standing on feet,True,False,False,0.023,0.025,41.045,4,4,"plant, caterpillars",,
+174,87/0.jpg,The uncaged bird has an opened cage door,True,True,True,0.025,0.026,35.627,3,6,"mug, grass",is,
+175,87/1.jpg,The caged bird has an unopened cage door,False,False,False,0.030,0.028,33.494,3,9,"grass, mug",is,
+473,236/1.jpg,the rest of their body is above the person's head,False,True,False,0.028,0.028,40.131,6,17,"skiers, snowboarders",are,more
+472,236/0.jpg,the person's head is above the rest of their body,True,False,False,0.009,0.010,39.547,7,3,"snowboarders, skiers",are,more
+353,176/1.jpg,the ball reached the base before the person,True,True,True,0.018,0.019,40.491,4,0,"forks, spoons",are,fewer
+352,176/0.jpg,the person reached the base before the ball,False,False,False,0.026,0.025,40.386,4,2,"spoons, forks",are,fewer
+74,37/0.jpg,soft shoes are on a smooth floor,True,True,True,0.021,0.013,40.110,4,1,"ladybugs, flowers",are,more
+75,37/1.jpg,smooth shoes are on a soft floor,False,False,False,0.012,0.013,39.699,4,0,"flowers, ladybugs",are,more
+18,9/0.jpg,people fall on the leaves,False,True,False,0.025,0.026,38.619,5,14,"juice, milk",is,"less, orange"
+19,9/1.jpg,the leaves fall on people,True,False,False,0.015,0.019,37.971,5,14,"milk, juice",is,"less, orange"
+197,98/1.jpg,someone is on a vehicle spraying water towards the ground,False,True,False,0.024,0.025,34.639,6,12,"dirt, space, jar",is,"more, empty"
+196,98/0.jpg,someone on the ground is spraying water towards a vehicle,True,False,False,0.027,0.027,35.047,7,6,"space, dirt, jar",is,"more, empty"
+68,34/0.jpg,pointy bushes are behind rectangular bushes,False,True,False,0.015,0.015,37.096,7,0,"bit, milk, chocolate, chocolate",is,"less, white"
+69,34/1.jpg,rectangular bushes are behind pointy bushes,True,False,False,0.023,0.024,37.006,7,2,"bit, chocolate, milk, chocolate",is,white
+397,198/1.jpg,The kids see the pancake and the adult throws it,True,True,True,0.010,0.009,39.448,5,13,"person, dog","sits, stands",
+396,198/0.jpg,The kid throws the pancake and the adult sees it,False,False,False,0.022,0.022,40.301,5,12,"person, dog","stands, sits",
+144,72/0.jpg,it's a fire truck,True,True,True,0.014,0.013,35.956,10,19,"person, hair","lies, sleeps","more, facial, other"
+145,72/1.jpg,it's a truck fire,False,False,False,0.011,0.011,36.035,11,27,"person, hair","sleeps, lies","more, facial, other, awake"
+602,301/0.jpg,a dog is on a blanket with spots,True,True,True,0.024,0.028,35.656,8,3,"person, middle, others","is, floating, are, standing",
+603,301/1.jpg,a blanket is on a dog with spots,False,False,False,0.020,0.020,35.488,8,12,"person, middle, others","is, standing, are, floating",
+640,320/0.png,the cow is over the moon,True,True,True,0.012,0.010,33.981,15,12,"person, camera, weightlifts, person, camera, runs",,closer
+641,320/1.png,the moon is over the cow,False,False,False,0.027,0.024,33.929,15,14,"person, camera, runs, person, camera, weightlifts",,closer
+26,13/0.jpg,a caterpillar with some plants,False,True,False,0.021,0.019,33.818,11,8,"person, shirt, waters, plant","collared, holds","white, other"
+27,13/1.jpg,a plant with some caterpillars,True,False,False,0.023,0.025,34.349,12,11,"person, shirt, plant, waters",holds,"white, collared, other"
+354,177/0.jpg,ice being dumped on top of fish,True,True,True,0.018,0.016,37.341,14,12,"person, food, person, food","chops, eats","taller, shorter"
+355,177/1.jpg,fish being dumped on top of ice,False,False,False,0.012,0.013,37.344,14,20,"person, food, person, food","eats, chops","taller, shorter"
+637,318/1.jpg,one person wearing two scarfs,False,True,False,0.029,0.030,32.376,9,13,"person, ponytail, packs, stuff",buys,other
+636,318/0.jpg,two persons wearing one scarf,True,False,False,0.019,0.019,33.235,9,18,"person, ponytail, stuff, packs",buys,other
+115,57/1.jpg,the dough is eaten before someone bakes the dough,True,True,True,0.015,0.017,36.693,8,12,"person, field, flowers, dress",walking,"yellow, red"
+114,57/0.jpg,someone bakes the dough before the dough is eaten,False,False,False,0.030,0.024,36.479,8,5,"person, field, flowers, dress",walking,"red, yellow"
+786,393/0.jpg,head in the clouds,False,True,False,0.022,0.020,38.401,5,26,"dog, couch",is,"brown, white"
+787,393/1.jpg,clouds in the head,True,False,False,0.021,0.020,37.736,4,27,"dog, couch",is,"white, brown"
+171,85/1.jpg,the person is kissing a frog who is wearing a crown,False,True,False,0.026,0.025,38.236,5,22,"bird, berry",is,"blue, red"
+170,85/0.jpg,the person who is wearing a crown is kissing a frog,True,False,False,0.016,0.014,38.297,5,18,"bird, berry",is,"red, blue"
+139,69/1.jpg,one is in a boat and almost everyone is swimming,False,True,False,0.014,0.016,37.939,12,0,"book, book, book",is,"red, yellow, blue"
+138,69/0.jpg,almost everyone is in a boat and one is swimming,True,False,False,0.031,0.026,37.860,12,0,"book, book, book",is,"yellow, blue, red"
+669,334/1.jpg,that person hands off their dusting,True,True,True,0.030,0.029,37.854,7,0,"astronauts, suits, planet, background",,"blue, red"
+668,334/0.jpg,that person dusting off their hands,False,False,False,0.019,0.020,37.559,7,0,"astronauts, suits, planet, background",,"red, blue"
+649,324/1.jpg,plants for water,False,True,False,0.021,0.022,38.121,5,10,"table, base",has,"square, round"
+648,324/0.jpg,water for plants,True,False,False,0.018,0.018,38.822,5,19,"round, table, base",has,square
+768,384/0.jpg,a person supports a small chair,True,True,True,0.022,0.022,33.849,6,0,"bushes, bushes",are,"pointy, rectangular"
+769,384/1.jpg,a chair supports a small person,False,False,False,0.035,0.029,34.713,6,0,"bushes, bushes",are,"rectangular, pointy"
+433,216/1.jpg,boat below the water,False,True,False,0.014,0.014,37.373,6,15,"sign, sign",is,"circular, rectangular"
+432,216/0.jpg,water below the boat,True,False,False,0.021,0.021,37.095,6,5,"sign, sign",is,"rectangular, circular"
+742,371/0.jpg,an animal giving a person food,True,True,True,0.030,0.025,30.609,6,0,"wood, chess, piece, metal, objects",rests,
+743,371/1.jpg,a person giving an animal food,False,False,False,0.005,0.016,30.691,6,0,"metal, chess, piece, wood, objects",rests,
+684,342/0.jpg,darker things become light in stripes,False,True,False,0.020,0.019,32.935,5,2,"shoes, floor",are,"soft, smooth"
+685,342/1.jpg,light things in stripes become darker,True,False,False,0.025,0.022,34.007,4,15,"shoes, floor",are,"smooth, soft"
+799,399/1.jpg,someone is doing it over,True,True,True,0.017,0.019,38.083,7,10,"person, right, person, left","is, is","happy, sad"
+798,399/0.jpg,someone is overdoing it,False,False,False,0.026,0.022,38.041,7,30,"person, right, person, left","is, is","sad, happy"
+644,322/0.jpg,cat house,True,True,True,0.028,0.030,37.402,7,19,"person, left, person, right","is, is","hurt, helpful"
+645,322/1.jpg,house cat,False,False,False,0.033,0.034,37.341,7,19,"person, left, person, right","is, is","helpful, hurt"
+693,346/1.jpg,A curled small animal with hair,True,True,True,0.020,0.023,33.876,18,23,"content, person, food, content, person, food","has, has","more, healthier, less, healthy"
+692,346/0.jpg,A small animal with curled hair,False,False,False,0.019,0.020,33.498,19,18,"content, person, food, content, person, food","has, has","healthier, healthy"
+176,88/0.jpg,meat with potatoes,False,True,False,0.012,0.012,37.621,7,0,"lollipop, lollipop","is, is, surprised","orange, sad, red"
+177,88/1.jpg,potatoes with meat,True,False,False,0.012,0.012,37.257,7,1,"lollipop, lollipop","is, surprised, is","orange, red, sad"
+750,375/0.jpg,living things drinking,True,True,True,0.018,0.016,36.214,14,19,"person, person","wears, does","larger, yellow, smaller"
+751,375/1.jpg,drinking living things,False,False,False,0.016,0.009,36.065,14,12,"person, person","wears, does","smaller, yellow, larger"
+620,310/0.jpg,every bug has a leaf,True,True,True,0.026,0.026,38.354,5,18,"cat, dog",is,"big, small"
+621,310/1.jpg,every leaf has a bug,False,False,False,0.014,0.021,38.446,5,16,"cat, dog",is,"small, big"
+409,204/1.jpg,"just one table tennis racket, many a ball",False,True,False,0.026,0.019,36.371,7,3,"oncoming, traffic, light, traffic","is, contrasted","heavy, outgoing"
+408,204/0.jpg,"many a table tennis racket, just one ball",True,False,False,0.021,0.019,36.174,9,0,"light, traffic, traffic","is, contrasted","oncoming, heavy, outgoing"
+759,379/1.jpg,more than one flotation device carrying a person,True,True,True,0.022,0.019,40.794,4,5,"drink, day",,"cold, hot"
+758,379/0.jpg,a person carrying more than one flotation device,False,False,False,0.014,0.014,40.577,4,16,"drink, day",,"hot, cold"
+631,315/1.jpg,the pants is too big for the person,False,True,False,0.026,0.027,36.436,8,15,person,"is, drinking, eating",
+630,315/0.jpg,the person is too big for the pants,True,False,False,0.024,0.023,33.356,7,13,person,"is, drinking, eating",
+562,281/0.jpg,hot rubber and cool metal,True,True,True,0.020,0.023,36.666,7,14,"sailboat, sails, beach","close, is",
+563,281/1.jpg,cool rubber and hot metal,False,False,False,0.021,0.009,36.969,6,5,"sailboat, beach","sails, is",close
+449,224/1.jpg,fly fishing,True,True,True,0.022,0.024,33.240,12,15,"passenger, road, driver, road","is, riding, is, driving","inattentive, attentive"
+448,224/0.jpg,fish flying,False,False,False,0.026,0.029,33.156,11,18,"passenger, road, driver, road","is, riding, is, driving","attentive, inattentive"
+281,140/1.jpg,there are more people than trees,True,True,True,0.017,0.025,36.766,8,24,"hat, person","wears, does",
+280,140/0.jpg,there are more trees than people,False,False,False,0.023,0.031,35.211,3,28,"person, hat","wears, does",
+468,234/0.jpg,more humans than phones,True,True,True,0.019,0.021,36.187,15,6,"person, legs, one","is, running, runs","green, red, legged, faster"
+469,234/1.jpg,more phones than humans,False,False,False,0.021,0.020,36.082,15,1,"person, legs, one","is, running, runs","green, faster, red, legged"
+731,365/1.jpg,water running on an athlete,True,True,True,0.032,0.026,34.377,6,3,"person, water, sand",is,
+730,365/0.jpg,an athlete running on water,False,False,False,0.021,0.021,34.554,5,4,"person, water, sand",is,close
+492,246/0.jpg,cars of bits,True,True,True,0.027,0.026,33.513,6,1,"frog, rocks, water","is, are",
+493,246/1.jpg,bits of cars,False,False,False,0.027,0.027,35.443,6,0,"frog, rocks, water","is, are",
+99,49/1.jpg,the person wears a hat but it doesn't,True,True,True,0.017,0.016,36.682,6,7,"road, terrain",driving,unpaved
+98,49/0.jpg,it wears a hat but the person doesn't,False,False,False,0.014,0.014,36.656,7,0,"road, terrain",driving,unpaved
+204,102/0.jpg,real cat with toy baby,False,True,False,0.023,0.019,33.267,4,10,"someone, helicopter, car",is,
+205,102/1.jpg,toy cat with real baby,True,False,False,0.019,0.020,31.447,4,4,"someone, helicopter, car",is,
+421,210/1.jpg,more cars than bicycles,True,True,True,0.028,0.027,35.325,13,0,"one, one, one, green, one","fit, fit","green, blue, blue"
+420,210/0.jpg,more bicycles than cars,False,False,False,0.014,0.013,35.182,12,1,"one, one, one, green, one","fit, fit","green, blue, blue"
+435,217/1.png,the other one is faster than the one in front,True,True,True,0.027,0.027,37.217,5,4,"photographer, others",jumping,
+434,217/0.jpg,the one in front is faster than the other one,False,False,False,0.025,0.023,36.957,5,14,"photographer, others",jumping,
+495,247/1.jpg,the world on top of a person,False,True,False,0.026,0.027,37.307,6,8,"someone, dough, dough","bakes, is, eaten",
+494,247/0.jpg,a person on top of the world,True,False,False,0.025,0.026,34.468,6,23,"dough, someone, dough","is, eaten, bakes",
+655,327/1.jpg,shiping a mann,True,True,True,0.017,0.015,37.675,5,0,,"hatched, was, eaten",
+654,327/0.jpg,manning a ship,False,False,False,0.015,0.015,38.753,5,24,,"was, eaten, hatched",
+729,364/1.jpg,some are training in a park,False,True,False,0.019,0.030,39.595,5,3,"bananas, apples",are,
+728,364/0.jpg,some are parking in a train,True,False,False,0.017,0.017,39.382,5,5,"bananas, apples",are,
+454,227/0.jpg,an object that rolls is on some wood,False,True,False,0.019,0.018,33.563,14,15,"someone, plate, toast, slices, eggs","has, loaded",
+455,227/1.jpg,some wood is on an object that rolls,True,False,False,0.020,0.023,33.342,14,5,"someone, plate, toast, slices, eggs","has, loaded",
+555,277/1.jpg,the one on the left is sad and the other is happy,True,True,True,0.030,0.032,36.221,5,0,"people, windows",are,
+554,277/0.jpg,the one on the left is happy and the other is sad,False,False,False,0.027,0.023,35.997,5,0,"people, windows",are,
+296,148/0.jpg,boat sail,True,True,True,0.015,0.016,36.719,9,0,"stars, flag, stars, flag",are,"right, left"
+297,148/1.jpg,sail boat,False,False,False,0.023,0.022,36.403,9,0,"stars, flag, stars, flag",are,"right, left"
+180,90/0.jpg,two humans and one wheel,True,True,True,0.022,0.023,35.516,11,22,"people, shirts, people, shirts","wear, wear","blue, white"
+181,90/1.jpg,two wheels and one human,False,False,False,0.028,0.029,34.849,11,22,"people, shirts, people, shirts","wear, wear","blue, white"
+558,279/0.jpg,the person on the left is crying sadly while the one on the right is smiling happily,True,True,True,0.016,0.016,33.942,5,27,"dog's, leg, person, torso",is,
+559,279/1.jpg,the person on the left is smiling happily while the one on the right is crying sadly,False,False,False,0.019,0.019,33.714,5,28,"person's, leg, dog's, torso",is,
+491,245/1.jpg,eyes on their food,False,True,False,0.012,0.013,37.203,7,10,"animal, eyes, person's",are,bigger
+490,245/0.jpg,food on their eyes,True,False,False,0.030,0.033,37.351,7,15,"person, eyes, animal's",are,bigger
+216,108/0.jpg,red building with white shutters,True,True,True,0.014,0.017,39.061,13,13,"person's, arm, person, shoulder",is,"taller, shorter"
+217,108/1.jpg,white building with red shutters,False,False,False,0.019,0.018,39.100,13,19,"person's, arm, person, shoulder",is,"shorter, taller"
+726,363/0.jpg,a tree is partially inside a parked car,True,True,True,0.021,0.023,36.944,13,16,"person, coat, person, coat","looks, looks","brown, black"
+727,363/1.jpg,a parked car is partially inside a tree,False,False,False,0.017,0.018,36.949,13,13,"person, coat, person, coat","looks, looks","black, brown"
+678,339/0.png,a bird cooking a person,False,True,False,0.027,0.027,37.706,5,2,,"ran, pursued",
+679,339/1.png,a person cooking a bird,True,False,False,0.020,0.022,38.581,5,1,,"ran, pursued",
+778,389/0.jpg,water is on and under a vessel,True,True,True,0.015,0.014,35.294,7,1,"everyone, boat","is, is, swimming",
+779,389/1.jpg,a vessel is on and under water,False,False,False,0.022,0.022,35.007,7,0,"boat, everyone","is, is, swimming",
+155,77/1.jpg,the people are touching each other with shoes,True,True,True,0.022,0.025,35.163,20,13,"person, shoes, emoji, person, shoes","is, holding, is","lighter, darker"
+154,77/0.jpg,the people with shoes are touching each other,False,False,False,0.029,0.028,34.943,20,9,"person, shoes, emoji, person, shoes","is, holding, is","darker, lighter"
+315,157/1.jpg,the people are taller than the flowers,True,True,True,0.017,0.018,35.285,15,18,"person, colors, person, colors, picture","wearing, poses, wearing, takes","neutral, brighter"
+314,157/0.jpg,the flowers are taller than the people,False,False,False,0.026,0.023,34.953,15,12,"person, colors, person, colors, picture","wearing, poses, wearing, takes","brighter, neutral"
+157,78/1.png,someone is hurt by a tree with an apple,True,True,True,0.024,0.021,39.635,3,17,"fire, truck",'s,
+156,78/0.jpg,someone with an apple is hurt by a tree,False,False,False,0.017,0.017,38.559,3,5,"truck, fire",'s,
+242,121/0.jpg,the pool has no people and the area around it has a lot of people,True,True,True,0.023,0.023,46.209,2,10,present,watching,
+243,121/1.jpg,the pool has a lot of people and the area around it has no people,False,False,False,0.027,0.027,44.875,2,5,watch,presenting,
+361,180/1.jpg,the baby is next to an adult on the phone,True,True,True,0.019,0.015,38.469,3,6,rock,walking,
+360,180/0.jpg,the baby on the phone is next to an adult,False,False,False,0.029,0.022,38.431,2,27,walk,rocking,
+610,305/0.jpg,visiting animals at home can be fun,True,True,True,0.025,0.024,37.892,6,13,"kid, glass","magnifying, looks",
+611,305/1.jpg,animals visiting at home can be fun,False,False,False,0.025,0.021,37.654,5,18,"kid, glass","looks, magnifying",
+777,388/1.jpg,"In a shopping cart, there are two animals that are the different species but are looking in same directions",False,True,False,0.017,0.029,36.844,3,19,"person, kids","is, sitting",
+776,388/0.jpg,"In a shopping cart, there are two animals that are the same species but are looking in different directions",True,False,False,0.016,0.020,38.910,3,9,"person, kids","is, sitting",
+21,10/1.jpg,the water rests below the sail,False,True,False,0.026,0.027,35.311,5,12,"people, shoes","are, touching",other
+20,10/0.jpg,the sail rests below the water,True,False,False,0.015,0.015,34.696,4,21,"people, shoes","are, touching",other
+406,203/0.jpg,left is red and right is blue,True,True,True,0.033,0.035,34.853,4,8,"someone, apple, tree","is, hurt",
+407,203/1.jpg,left is blue and right is red,False,False,False,0.029,0.025,31.257,4,0,"someone, tree, apple","is, hurt",
+697,348/1.jpg,A dog with their feet hanging out of a car window and a person,True,True,True,0.022,0.022,35.588,4,12,"person, table, food","is, is, eating",
+696,348/0.jpg,A dog and a person with their feet hanging out of a car window,False,False,False,0.019,0.015,35.868,4,14,"person, food, table","is, eating, is",
+153,76/1.jpg,the person is sitting with the kids,True,True,True,0.019,0.021,38.067,6,19,"watering, can, pot",is,larger
+152,76/0.jpg,the person with the kids is sitting,False,False,False,0.020,0.019,37.969,6,18,"pot, watering, can",is,larger
+127,63/1.jpg,six people wear blue shirts and no people wear white shirts,False,True,False,0.019,0.020,33.902,13,11,"suitcase, handle, hand, passport, hand","hold, hold","left, right"
+126,63/0.jpg,no people wear blue shirts and six people wear white shirts,True,False,False,0.029,0.029,33.870,13,14,"passport, hand, suitcase, handle, hand","hold, hold","left, right"
+608,304/0.jpg,The white queen is taking the black king,True,True,True,0.019,0.006,36.260,12,11,"person, shirt","patterned, is, is","curly, haired, other, straight, haired"
+609,304/1.jpg,The black queen is taking the white king,False,False,False,0.026,0.026,36.274,11,10,"person, shirt","patterned, is, is","straight, haired, other, curly, haired"
+782,391/0.jpg,The worker wears something striped over a white undershirt with a collar,True,True,True,0.029,0.029,38.239,5,1,"diagram, movement, right, left",showing,
+783,391/1.jpg,The worker wears something white over a striped undershirt with a collar,False,False,False,0.021,0.021,38.309,5,0,"diagram, movement, right",showing,left
+203,101/1.jpg,real mustache and fake hair on head,True,True,True,0.031,0.028,36.865,6,8,"flip, flops, feet",are,big
+202,101/0.jpg,fake mustache and real hair on head,False,False,False,0.022,0.020,37.168,6,3,"feet, flip, flops",are,big
+646,323/0.jpg,gold for pan,True,True,True,0.024,0.023,35.887,5,18,"person, crown, frog","is, wearing, is, kissing",
+647,323/1.jpg,pan for gold,False,False,False,0.024,0.020,35.155,5,8,"person, frog, crown","is, kissing, is, wearing",
+392,196/0.jpg,a cat is lying down and a person is stretching,False,True,False,0.026,0.026,36.680,7,8,"dog, couch, person, floor","sitting, lying",
+393,196/1.jpg,a cat is stretching and a person is lying down,True,False,False,0.027,0.026,37.130,6,9,"person, couch, dog, floor","lying, sitting",
+704,352/0.jpg,a volcano above water makes steam,True,True,True,0.030,0.030,31.685,7,7,"bird, cage, door","has, opened",uncaged
+705,352/1.jpg,water above a volcano makes steam,False,False,False,0.020,0.021,35.184,7,4,"bird, cage, door",has,"caged, unopened"
+459,229/1.png,a superhero wishing they were a normal person,True,True,True,0.020,0.026,39.794,2,4,"meat, potatoes",,
+458,229/0.jpg,a normal person wishing they were a superhero,False,False,False,0.022,0.027,44.323,2,13,"potatoes, meat",,
+336,168/0.jpg,the person is looking at the dog,True,True,True,0.011,0.012,35.878,6,16,"person, pink","was, winning",close
+337,168/1.jpg,the dog is looking at the person,False,False,False,0.026,0.029,37.067,6,1,"person, pink","was, winning",close
+509,254/1.png,there are more eyes on a typical human than there are in the image,False,True,False,0.018,0.021,40.225,5,27,"humans, wheel",,
+508,254/0.jpg,there are more eyes in the image than there are on a typical human,True,False,False,0.019,0.019,40.335,5,25,"wheels, human",,
+321,160/1.jpg,its body is shorter than its tail,True,True,True,0.022,0.021,42.209,2,3,"clothing, lines",,
+320,160/0.jpg,its tail is shorter than its body,False,False,False,0.019,0.020,38.002,2,1,"lines, clothing",,
+475,237/1.jpg,person over board,True,True,True,0.019,0.020,37.117,9,25,"someone, phone, person","talks, sits",
+474,237/0.jpg,person overboard,False,False,False,0.009,0.010,36.472,9,14,"someone, phone, person","talks, sits",
+16,8/0.jpg,a tree smashed into a car,True,True,True,0.030,0.029,34.746,7,0,"boats, direction, stream",,
+17,8/1.jpg,a car smashed into a tree,False,False,False,0.027,0.026,34.388,7,1,"boat, directions, stream",,
+486,243/0.jpg,more hair on the person's face than on their head,True,True,True,0.024,0.024,37.110,6,17,"dog, tongue",rides,visible
+487,243/1.jpg,more hair on the person's head than on their face,False,False,False,0.032,0.034,33.312,6,25,"dog, tongue",rides,visible
+414,207/0.jpg,an older person blocking a younger person,True,True,True,0.018,0.019,44.050,2,14,hammer,handing,
+415,207/1.jpg,a younger person blocking an older person,False,False,False,0.022,0.024,38.974,2,0,hand,hammering,
+262,131/0.jpg,milk cow,True,True,True,0.027,0.025,28.997,3,0,shedding,leaves,
+263,131/1.jpg,cow milk,False,False,False,0.019,0.018,43.744,4,5,leaves,shedding,
+240,120/0.jpg,the balloon in the middle has less air and the other balloons have more air,True,True,True,0.031,0.032,34.623,9,15,"bait, fish","are, using, got",
+241,120/1.jpg,the balloon in the middle has more air and the other balloons have less air,False,False,False,0.022,0.022,35.398,9,17,"bait, fish","are, using, got",
+13,6/1.jpg,"another organism was harmed by a plant, and that plant broke the organism into pieces",True,True,True,0.030,0.026,36.799,5,20,"someone, ground, water, vehicle","is, spraying",
+12,6/0.jpg,"a plant was harmed by another organism, and that organism broke the plant into pieces",False,False,False,0.012,0.012,34.152,5,10,"someone, vehicle, water, ground","is, spraying",
+319,159/1.jpg,a ball is casting a shadow beside a person,False,True,False,0.020,0.027,33.009,7,19,"dog, hat, someone","wears, bite",
+318,159/0.jpg,a person is casting a shadow beside a ball,True,False,False,0.014,0.014,34.911,7,16,"dog, someone, hat","bites, wear",
+23,11/1.jpg,there is someone below a table,True,True,True,0.024,0.024,37.393,7,19,"one, left, one, right","is, is","happy, upset"
+22,11/0.jpg,there is a table below someone,False,False,False,0.017,0.017,37.356,7,20,"one, left, one, right","is, is","upset, happy"
+247,123/1.jpg,the train is still while the person is moving fast,False,True,False,0.027,0.027,35.982,6,18,"mustache, hair, head",,"fake, real"
+246,123/0.jpg,the train is moving fast while the person is still,True,False,False,0.018,0.019,36.935,6,12,"mustache, hair, head",,"real, fake"
+753,376/1.jpg,near a person using a water lasso,True,True,True,0.031,0.038,38.076,4,27,"cat, toy, baby",,real
+752,376/0.jpg,a person near water using a lasso,False,False,False,0.018,0.020,33.059,4,5,"toy, cat, baby",,real
+193,96/1.jpg,shedding its leaves,True,True,True,0.011,0.011,34.407,5,7,"lion, lionness","is, is","loud, quiet"
+192,96/0.jpg,leaves its shedding,False,False,False,0.014,0.015,34.510,5,21,"lion, lionness","is, is","quiet, loud"
+686,343/0.jpg,together hammering something,False,True,False,0.025,0.024,38.637,5,5,"couch, pillows",is,"pink, green"
+687,343/1.jpg,hammering something together,True,False,False,0.012,0.014,38.390,5,1,"couch, pillows",is,"green, pink"
+733,366/1.jpg,getting a horse wet,False,True,False,0.019,0.021,38.824,7,13,"dog, cat","colored, colored","light, dark"
+732,366/0.jpg,a horse getting wet,True,False,False,0.020,0.022,38.535,7,28,"dog, light, cat",colored,"dark, colored"
+445,222/1.jpg,I need my back strength,True,True,True,0.026,0.026,39.012,7,18,"someone, hat, shirt","is, wearing","black, yellow"
+444,222/0.jpg,I need my strength back,False,False,False,0.025,0.025,38.889,7,10,"someone, hat, shirt","is, wearing","yellow, black"
+384,192/0.jpg,the potato is washed and then it is cut,True,True,True,0.021,0.022,44.280,5,13,"socks, shoes",,"black, orange"
+385,192/1.jpg,the potato is cut and then it is washed,False,False,False,0.022,0.021,45.105,5,0,"socks, shoes",,"orange, black"
+476,238/0.jpg,more red buttons than blue,True,True,True,0.016,0.022,40.934,4,3,"building, shutters",,"red, white"
+477,238/1.jpg,more blue buttons than red,False,False,False,0.027,0.022,41.923,4,23,"building, shutters",,"white, red"
+343,171/1.jpg,the car is underneath the person,False,True,False,0.020,0.021,43.542,5,12,"pants, top",,"blue, green"
+342,171/0.jpg,the person is underneath the car,True,False,False,0.013,0.014,43.191,5,13,"pants, top",,"green, blue"
+96,48/0.jpg,the passenger is riding inattentive to the road and the driver is driving attentive to the road,True,True,True,0.020,0.022,33.742,7,0,balls,'s,"blue, many, yellow"
+97,48/1.jpg,the passenger is riding attentive to the road and the driver is driving inattentive to the road,False,False,False,0.014,0.015,34.743,7,0,balls,'s,"yellow, many, blue"
+258,129/0.jpg,the car is sitting upside down while the person is standing rightside up,True,True,True,0.026,0.028,39.426,6,0,"coins, gold, coins",are,"more, silver"
+259,129/1.jpg,the car is sitting rightside up while the person is standing upside down,False,False,False,0.030,0.028,39.596,6,0,"gold, coins, coins",are,"more, silver"
+245,122/1.jpg,small fish beside a big person,True,True,True,0.027,0.031,35.962,8,18,"team, ball, team",kicking,"red, blue"
+244,122/0.jpg,big fish beside a small person,False,False,False,0.014,0.014,36.009,8,13,"team, ball, team",kicking,"blue, red"
+283,141/1.jpg,there are more people than computers,True,True,True,0.015,0.014,42.020,5,17,"dog, sweater",wearing,"black, brown"
+282,141/0.jpg,there are more computers than people,False,False,False,0.034,0.040,40.425,5,15,"dog, sweater",wearing,"brown, black"
+657,328/1.jpg,the person who isn't wearing a sweater stands in front of the person wearing a sweater,False,True,False,0.021,0.019,39.395,7,0,"apple, bunch, apples",surrounded,"green, red"
+656,328/0.jpg,the person wearing a sweater stands in front of the person who isn't wearing a sweater,True,False,False,0.038,0.035,39.484,7,0,"apple, bunch, apples",surrounded,"red, green"
+681,340/1.jpg,a jumping person wearing yellow and a person wearing stripes,False,True,False,0.009,0.009,35.733,5,13,"person, white, book","is, reading",orange
+680,340/0.jpg,a person wearing yellow and a person wearing stripes jumping,True,False,False,0.011,0.012,36.699,5,7,"person, orange, book","is, reading",white
+791,395/1.jpg,They have hair over their sunglasses,False,True,False,0.020,0.020,36.460,5,12,"children, adult","are, being, is","quiet, loud"
+790,395/0.jpg,They have sunglasses over their hair,True,False,False,0.020,0.022,37.099,5,4,"children, adult","are, being, is","loud, quiet"
+565,282/1.jpg,the square shape is beneath the triangular one,True,True,True,0.029,0.025,37.387,9,2,"mirror, left, mirror, right","is, is","circular, rectangular"
+564,282/0.jpg,the triangular shape is beneath the square one,False,False,False,0.027,0.025,37.253,9,6,"mirror, left, mirror, right","is, is","rectangular, circular"
+665,332/1.jpg,a dog is touching a mouse,True,True,True,0.011,0.019,36.435,5,16,"food, heart, wood",shaped,circular
+664,332/0.jpg,a mouse is touching a dog,False,False,False,0.027,0.024,33.343,5,5,"heart, food, wood",shaped,circular
+232,116/0.jpg,the children are being quiet while the adult is loud,True,True,True,0.023,0.022,36.996,7,1,"dress, left, dress, right","is, is","long, short"
+233,116/1.jpg,the children are being loud while the adult is quiet,False,False,False,0.019,0.019,37.005,7,4,"dress, left, dress, right","is, is","short, long"
+478,239/0.png,the object at the top left is purple and the one at the bottom right of the group is red,True,False,False,0.011,0.011,35.774,11,14,"balloon, middle, air, balloons, air","has, have","less, other, more"
+479,239/1.jpg,the object at the bottom right is purple and the one at the top left of the group is red,False,True,False,0.010,0.011,36.023,11,13,"balloon, middle, air, balloons, air","has, have","more, other, less"
+102,51/0.jpg,a person is in the water and close to the sand,True,True,True,0.011,0.011,33.754,11,2,"pool, people, area, lot, people","has, has",
+103,51/1.jpg,a person is close to the water and in the sand,False,False,False,0.023,0.024,35.052,11,3,"pool, lot, people, area, people","has, has",
+378,189/0.jpg,they worked out then they drank water,True,True,True,0.021,0.021,37.619,5,8,"fish, person",,"big, small"
+379,189/1.jpg,they drank water then they worked out,False,False,False,0.026,0.021,39.631,5,19,"fish, person",,"small, big"
+303,151/1.jpg,display the dress,False,True,False,0.029,0.025,34.682,6,12,"train, person","is, moving, is",
+302,151/0.jpg,dress the display,True,False,False,0.018,0.013,32.762,7,7,"train, person","is, is, moving",
+223,111/1.jpg,there are more gold coins than silver coins,True,True,True,0.023,0.024,36.291,6,5,"water, day","'re, enjoying","hot, cold"
+222,111/0.jpg,there are more silver coins than gold coins,False,False,False,0.017,0.018,36.523,6,14,"water, day","'re, enjoying","cold, hot"
+267,133/1.jpg,there is a banana split,True,True,True,0.024,0.026,43.593,4,1,"floors, wood, walls",,concrete
+266,133/0.jpg,there is a split banana,False,False,False,0.025,0.025,43.589,4,0,"wood, floors, concrete, walls",,
+24,12/0.jpg,the image shows a computer on top of books,True,True,True,0.019,0.019,36.069,11,15,"person, left, hair, person, right, hair","has, has","curly, straight"
+25,12/1.jpg,the image shows books on top of a computer,False,False,False,0.026,0.026,36.119,11,20,"person, left, hair, person, right, hair","has, has","straight, curly"
+553,276/1.jpg,the younger person is silent while the other is making noise,False,True,False,0.012,0.017,36.638,5,5,"metal, bottle, lid",'s,plastic
+552,276/0.jpg,the younger person is making noise while the other is silent,True,False,False,0.030,0.031,36.933,5,0,"bottle, metal, lid",'s,plastic
+54,27/0.jpg,the person with the ponytail packs stuff and other buys it,True,True,True,0.019,0.019,37.985,6,2,"fruit, junk, food","is, is","heavy, light"
+55,27/1.jpg,the person with the ponytail buys stuff and other packs it,False,False,False,0.020,0.020,38.154,6,0,"fruit, junk, food","is, is","light, heavy"
+575,287/1.jpg,a group of two people with longer hair and three with short hair in a business context,True,True,True,0.021,0.023,35.272,10,15,"car, person, rightside","is, sitting, is, standing",
+574,287/0.jpg,a group of three people with longer hair and two with short hair in a business context,False,False,False,0.026,0.026,35.107,10,13,"car, rightside, person","is, sitting, is, standing",
+447,223/1.jpg,the ones on the side are taller than the one in the middle is,True,True,True,0.020,0.018,36.558,11,6,"cup, left, cup, right","is, filled, is, filled",second
+446,223/0.jpg,the one in the middle is taller than the ones on the side are,False,False,False,0.011,0.010,36.120,9,7,"cup, left, cup, right","is, filled, is, filled",
+51,25/1.jpg,the person with the white collared shirt holds the plant while the other waters it,True,False,False,0.025,0.024,48.398,2,5,"milk, cow",,
+50,25/0.jpg,the person with the white collared shirt waters the plant while the other holds it,False,True,False,0.027,0.018,45.343,2,10,"cow, milk",,
+351,175/1.jpg,child pointing at parent,True,False,False,0.016,0.018,36.466,2,12,"clock, wall",is,
+350,175/0.jpg,parent pointing at child,False,True,False,0.025,0.024,36.769,2,8,"wall, clock",is,
+201,100/1.jpg,the upset one is on the left and the happy one is on the right,True,True,True,0.017,0.016,35.335,2,0,banana,is,split
+200,100/0.jpg,the happy one is on the left and the upset one is on the right,False,False,False,-0.006,-0.008,38.273,2,2,"banana, split",is,
+123,61/1.jpg,there are two people and three windows,True,True,True,0.010,0.009,37.488,5,26,"people, bunch, horses",are,
+122,61/0.jpg,there are three people and two windows,False,False,False,0.013,0.012,37.166,5,7,"bunch, people, horses",are,
+700,350/0.jpg,one ear that some donkey is whispering a secret into,False,True,False,0.027,0.028,41.459,7,9,eggs,,"white, brown"
+701,350/1.jpg,donkey ear that some one is whispering a secret into,True,False,False,0.023,0.023,41.038,7,5,eggs,,"white, brown"
+797,398/1.jpg,racing it over,False,True,False,0.016,0.016,36.279,2,8,"plastic, fish",is,
+796,398/0.jpg,racing over it,True,False,False,0.018,0.019,34.825,2,13,"fish, plastic",is,
+548,274/0.png,space in a star,True,True,True,0.029,0.028,37.066,5,28,"dog's, paw, cat's, face",is,
+549,274/1.jpg,a star in space,False,False,False,0.021,0.008,36.970,5,28,"cat's, paw, dog's, face",is,
+643,321/1.jpg,someone pets a baby,True,True,True,0.017,0.019,37.519,7,19,"computer, screen, phone, screen","is, is",
+642,321/0.jpg,someone babys a pet,False,False,False,0.022,0.019,37.800,7,11,"phone, screen, computer, screen","is, is",
+767,383/1.jpg,at least one toy herbivore stands on top of a toy carnivore,True,True,True,0.020,0.021,35.143,10,20,"dog, driver, seat, person, passenger, seat","is, is",
+766,383/0.jpg,a toy herbivore stands on top of at least one toy carnivore,False,False,False,0.017,0.020,35.320,9,27,"dog, passenger, seat, person, driver, seat","is, is",
+638,319/0.jpg,human head on pet,True,False,False,0.023,0.022,41.364,4,9,"trees, people",are,more
+639,319/1.jpg,pet head on human,False,True,False,0.021,0.025,39.708,4,3,"people, trees",are,more
+90,45/0.jpg,a cold drink on a hot day,True,True,True,0.012,0.012,41.141,5,4,"computers, people",are,more
+91,45/1.jpg,a hot drink on a cold day,False,False,False,0.010,0.022,39.664,4,6,"people, computers",are,more
+583,291/1.jpg,physical therapist inspecting pink elastic therapeutic kinesio tape over blue,True,True,True,0.025,0.025,40.493,4,0,"wood, metal",is,more
+582,291/0.jpg,physical therapist inspecting blue elastic therapeutic kinesio tape over pink,False,False,False,0.025,0.026,40.808,4,2,"metal, wood",is,more
+795,397/1.jpg,a large non-living thing in front of a large living thing,True,True,True,0.021,0.022,39.174,4,17,"hats, people",are,more
+794,397/0.jpg,a large living thing in front of a large non-living thing,False,False,False,0.018,0.016,37.461,4,16,"people, hats",are,more
+53,26/1.jpg,the taller person eats food and the shorter person chops food,True,True,True,0.019,0.018,38.927,4,17,"people, stools",are,more
+52,26/0.jpg,the taller person chops food and the shorter person eats food,False,False,False,0.013,0.011,40.140,4,10,"stools, people",are,more
+306,153/0.jpg,books holding up a person,False,True,False,0.033,0.034,38.146,6,9,"wine, wine",is,"more, red, white"
+307,153/1.jpg,a person holding up books,True,False,False,0.022,0.022,37.976,6,3,"wine, wine",is,"more, white, red"
+466,233/0.jpg,a human being on a device that intercepts the sun's rays,False,True,False,0.023,0.021,38.884,4,4,"milk, coffee",'s,more
+467,233/1.jpg,a device that intercepts the sun's rays on a human being,True,False,False,0.023,0.023,38.893,4,3,"coffee, milk",'s,more
+269,134/1.jpg,there are a bunch of people and two horses,True,True,True,0.019,0.019,37.539,5,3,"cereal, bowl, milk",'s,more
+268,134/0.jpg,there are two people and a bunch of horses,False,False,False,0.022,0.022,37.078,5,12,"milk, bowl, cereal",'s,more
+531,265/1.jpg,there are more boxes than pineapples,True,True,True,0.009,0.008,46.366,2,3,"boat, sail",,
+530,265/0.jpg,there are more pineapples than boxes,False,False,False,0.019,0.019,45.196,2,3,"sail, boat",,
+741,370/1.jpg,one sparkler for two hands,True,True,True,0.011,0.011,55.217,2,3,"boat, house",,
+740,370/0.jpg,two sparklers for one hand,False,False,False,0.011,0.011,47.542,2,7,"house, boat",,
+429,214/1.jpg,a person consoles while another person wearing jewelry above their shoulders cries,True,True,True,0.017,0.021,39.296,4,4,rip,check,
+428,214/0.jpg,a person cries while another person wearing jewelry above their shoulders consoles,False,False,False,0.027,0.032,41.476,4,2,check,rip,
+517,258/1.jpg,the shelves on the person's right are full and the shopping basket is empty,True,True,True,0.018,0.019,35.213,2,10,display,dress,
+516,258/0.jpg,the shopping basket is full and the shelves on the person's right are empty,False,False,False,0.021,0.022,38.482,4,3,dress,display,
+456,228/0.jpg,a cat viewing a human on a screen,True,True,True,0.027,0.025,41.399,3,2,"spoon, honey",holding,
+457,228/1.jpg,a human viewing a cat on a screen,False,False,False,0.022,0.026,36.226,3,2,"honey, holding, spoon",,
+100,50/0.jpg,the person with green legs is running quite slowly and the red legged one runs faster,False,True,False,0.023,0.023,38.309,3,16,"books, person",holding,
+101,50/1.jpg,the person with green legs is running faster and the red legged one runs quite slowly,False,False,False,0.019,0.021,41.435,3,10,"person, books",holding,
+749,374/1.jpg,two people wearing clothes of different colors are on the same side of the tennis net,True,True,True,0.013,0.014,35.231,5,5,"dog, wheelchair, person","is, using",
+748,374/0.jpg,two people wearing clothes of the same colors are on different side of the tennis net,False,False,False,0.030,0.030,35.569,5,15,"person, wheelchair, dog","is, using",
+142,71/0.jpg,the person wearing neutral colors poses and the person wearing brighter colors takes a picture,True,True,True,0.034,0.030,39.834,5,7,"plants, lightbulb",surrounding,
+143,71/1.jpg,the person wearing brighter colors poses and the person wearing neutral colors takes a picture,False,False,False,0.020,0.020,40.867,5,1,"lightbulb, plants",surrounding,
+736,368/0.jpg,a person is touching the head of a squirrel,True,True,True,0.020,0.020,33.653,11,26,"dog, toy, dog","is, holding","colored, black"
+737,368/1.jpg,a squirrel is touching the head of a person,False,False,False,0.010,0.010,34.622,11,22,"dog, toy, dog","is, holding, colored",black
+410,205/0.jpg,"four lions, no tigers",True,True,True,0.025,0.026,39.091,5,15,"flowers, people",are,taller
+411,205/1.jpg,"no lions, four tigers",False,False,False,0.030,0.024,38.561,5,13,"people, flowers",are,taller
+695,347/1.jpg,A left hand pulls a glove onto a right hand,True,True,True,0.025,0.024,37.122,4,18,"human, stroller, dog",'s,
+694,347/0.jpg,A right hand pulls a glove onto a left hand,False,False,False,0.035,0.035,36.764,4,2,"dog, stroller, human",'s,
+541,270/1.jpg,the dog stands and the cat sits,True,True,True,0.010,0.019,34.094,5,4,"person, shadow, ball","is, casting",
+540,270/0.jpg,the dog sits and the cat stands,False,False,False,0.022,0.022,34.224,5,2,"ball, shadow, person","is, casting",
+113,56/1.jpg,jumping towards the photographer and away from the others,True,True,True,0.025,0.019,39.140,8,1,"tail, body",is,shorter
+112,56/0.jpg,jumping away from the photographer and towards the others,False,False,False,0.028,0.026,38.478,8,9,"body, tail",is,shorter
+218,109/0.jpg,blue pants and green top,True,True,True,0.026,0.023,37.491,4,17,"child, adult, ball","is, throwing",
+219,109/1.jpg,green pants and blue top,False,False,False,0.016,0.018,38.518,4,11,"adult, child, ball","is, throwing",
+501,250/1.jpg,more hugs than kisses,True,True,True,0.024,0.031,39.140,3,10,"person, lights",,
+500,250/0.jpg,more kisses than hugs,False,False,False,0.020,0.020,42.497,3,10,"lights, person",,
+67,33/1.jpg,the round table has a square base,True,True,True,0.018,0.019,36.476,3,7,"green, ball",,
+66,33/0.jpg,the square table has a round base,False,False,False,0.026,0.022,36.634,3,0,"ball, green",,
+539,269/1.jpg,the text is white on black,True,True,True,0.017,0.020,42.129,2,14,clouds,mind,
+538,269/0.jpg,the text is black on white,False,False,False,0.011,0.010,41.260,2,1,"clouds, mind",,
+734,367/0.jpg,the glasses full of water are above the person's head and leg,False,True,False,0.025,0.025,33.992,2,1,"phone, map",'s,
+735,367/1.jpg,the person's head and leg are above the glasses full of water,True,False,False,0.019,0.022,32.420,2,3,"map, phone",'s,
+725,362/1.jpg,a nicely landscaped lawn above a modern office complex with many windows,True,True,True,0.029,0.030,36.735,5,25,"person, rock, dog",,
+724,362/0.jpg,a modern office complex with many windows above a nicely landscaped lawn,False,False,False,0.015,0.023,37.257,4,15,"dog, rock, person",,
+265,132/1.jpg,there is a wall clock,False,True,False,0.018,0.024,34.694,4,10,"adult, child","is, flexing",
+264,132/0.jpg,there is a clock wall,True,False,False,0.018,0.018,34.056,4,22,"child, adult","is, flexing",
+706,353/0.jpg,A child riding a bike and an adult,True,False,False,0.020,0.019,37.864,3,26,"person, dog","is, looking",
+707,353/1.jpg,A child and an adult riding a bike,False,True,False,0.025,0.022,37.323,3,26,"dog, person","is, looking",
+357,178/1.jpg,a child kisses an adult,True,True,True,0.029,0.029,38.912,4,18,"cat, blanket",is,red
+356,178/0.jpg,an adult kisses a child,False,False,False,0.027,0.031,35.541,4,25,"blanket, cat",is,red
+529,264/1.jpg,there are less masks than gloves,False,True,False,0.018,0.021,40.267,5,8,"person, house",is,bigger
+528,264/0.jpg,there are less gloves than masks,True,False,False,0.015,0.016,39.728,5,23,"house, person",is,bigger
+10,5/0.jpg,a bird eats a snake,True,True,True,0.029,0.022,39.448,4,10,"person, car",is,
+11,5/1.jpg,a snake eats a bird,False,False,False,0.014,0.019,39.952,4,18,"car, person",is,
+310,155/0.jpg,some plants surrounding a lightbulb,True,True,True,0.019,0.020,39.163,3,0,"water, plastic","is, filled",
+311,155/1.jpg,a lightbulb surrounding some plants,False,False,False,0.020,0.020,38.524,3,0,"plastic, water","is, filled",
+37,18/1.jpg,there is less milk than orange juice,True,True,True,0.017,0.022,32.509,2,5,"apple, target",is,
+36,18/0.jpg,there is less orange juice than milk,False,False,False,0.020,0.020,28.269,4,2,"target, apple",is,
+125,62/1.png,there are 5 stars on the right flag and 50 stars on the left flag,True,True,True,0.016,0.020,39.699,4,3,"plant, light, bulb",made,
+124,62/0.png,there are 50 stars on the right flag and 5 stars on the left flag,False,False,False,0.017,0.016,38.290,4,12,"light, bulb, plant",made,
+770,385/0.jpg,a person smiles at another person wearing a checked shirt who is hitting a ping pong ball,True,True,True,0.020,0.017,44.470,7,11,"parent, child",pointing,
+771,385/1.jpg,a person wearing a checked shirt smiles at another person who is hitting a ping pong ball,False,False,False,0.041,0.041,44.388,6,20,"child, parent",pointing,
+255,127/1.jpg,there's a plastic bottle with a metal lid,True,False,False,0.025,0.023,35.321,5,15,"person, base, ball",reached,
+254,127/0.jpg,there's a metal bottle with a plastic lid,False,True,False,0.014,0.014,35.028,5,15,"ball, base, person",reached,
+82,41/0.jpg,the orange lollipop is sad and the red lollipop is surprised,True,True,True,0.012,0.010,35.543,4,2,"ice, top, fish","being, dumped",
+83,41/1.jpg,the orange lollipop is surprised and the red lollipop is sad,False,False,False,0.021,0.018,37.936,4,4,"fish, top, ice","being, dumped",
+141,70/1.jpg,the person with the darker shoes is holding an emoji and the person with the lighter shoes isn't,True,True,True,0.022,0.022,42.201,3,14,"adult, child",kisses,
+140,70/0.jpg,the person with the lighter shoes is holding an emoji and the person with the darker shoes isn't,False,False,False,0.022,0.022,40.295,3,12,"child, adult",kisses,
+524,262/0.jpg,I had cleaned my car,True,True,True,0.013,0.012,34.522,6,37,"dog, mask, person",'s,
+525,262/1.jpg,I had my car cleaned,False,False,False,0.021,0.021,34.723,6,40,"dog, person, mask",'s,
+120,60/0.jpg,someone has loaded their plate with one of the toast slices and two of the eggs,True,True,True,0.015,0.013,35.856,5,13,"baby, phone, adult",is,
+121,60/1.jpg,someone has loaded their plate with two of the toast slices and one of the eggs,False,False,False,0.010,0.011,34.621,5,17,"baby, adult, phone",is,
+161,80/1.jpg,the pot is larger than the watering can,False,True,False,0.006,0.007,35.779,13,17,"person, left, arms, person, right, arms","has, has",
+160,80/0.jpg,the watering can is larger than the pot,True,False,False,0.018,0.020,35.764,13,7,"person, right, arms, person, left, arms","has, has",
+662,331/0.jpg,soon this animal not with a tail will have one,False,True,False,0.019,0.024,36.102,9,7,"person, left, phone, person, right","is, holding, is, staring",
+663,331/1.jpg,soon this animal with a tail will not have one,True,False,False,0.026,0.021,36.078,9,30,"person, right, phone, person, left","is, holding, is, staring",
+28,14/0.jpg,there is a mug in some grass,False,True,False,0.022,0.026,36.400,7,3,"orange, left, orange, right","is, is","moldy, fresh"
+29,14/1.jpg,there is some grass in a mug,True,False,False,0.018,0.021,36.384,7,6,"orange, right, orange, left","is, is","moldy, fresh"
+287,143/1.jpg,there are more people than hats,False,True,False,0.019,0.019,37.111,8,7,"scoop, ice, cream, top, scoop, bottom",,"pink, blue"
+286,143/0.jpg,there are more hats than people,True,False,False,0.024,0.025,37.415,8,5,"scoop, ice, cream, bottom, scoop, top",,"pink, blue"
+547,273/1.jpg,a person in a brown-ish coat with a blue coffee cup,True,False,False,0.017,0.019,37.053,8,5,"glasses, right, glasses, left",are,fuller
+546,273/0.jpg,a person in a blue coat with a brown-ish coffee cup,False,True,False,0.024,0.028,37.096,7,1,"glasses, left, glasses, right",are,fuller
+367,183/1.jpg,the orange on the right is moldy while the orange on the left is fresh,True,False,False,0.018,0.022,35.949,9,23,"person, left, bubbles, person, right","is, blowing, is, watching",
+366,183/0.jpg,the orange on the left is moldy while the orange on the right is fresh,False,True,False,0.022,0.023,35.952,8,16,"person, right, bubbles, person, left","is, blowing, is, watching",
+471,235/1.jpg,a tube is in the person,True,True,True,0.016,0.017,36.773,6,4,"foam, left, right",'s,more
+470,235/0.jpg,a person is in the tube,False,False,False,0.013,0.018,36.597,6,8,"foam, right, left",'s,more
+675,337/1.jpg,yellow duck on shoes,False,True,False,0.025,0.028,37.445,4,2,"fish, right","is, jumping",left
+674,337/0.jpg,yellow duck shoes on,True,False,False,0.027,0.027,37.680,4,1,"fish, right, left","is, jumping",
+784,392/0.jpg,A person seen from above has a grid below them,False,True,False,0.029,0.028,37.715,7,5,water,"worked, drank",
+785,392/1.jpg,A person seen from below has a grid above them,True,False,False,0.025,0.021,36.759,7,19,water,"drank, worked",
+417,208/1.jpg,black land and white water,True,False,False,0.020,0.022,36.381,5,24,"shrimp, shrimp","are, peeled, are, cooked",
+416,208/0.jpg,white land and black water,False,True,False,0.017,0.019,36.236,5,7,"shrimp, shrimp","are, cooked, are, peeled",
+130,65/0.jpg,the animal's eyes are bigger than the person's,True,True,True,0.028,0.027,36.470,5,0,"coffee, ground","is, poured, is",
+131,65/1.jpg,the person's eyes are bigger than the animal's,False,False,False,0.031,0.030,35.087,5,4,"ground, coffee","is, is, poured",
+712,356/0.jpg,a fencer who is wearing black pants having a point scored against them by another fencer using a wheelchair,True,False,False,0.020,0.016,36.968,6,0,potato,"is, washed, is, cut",
+713,356/1.jpg,a fencer having a point scored against them by another fencer who is wearing black pants using a wheelchair,False,True,False,0.023,0.024,36.768,6,1,potato,"is, cut, is, washed",
+285,142/1.jpg,there is more metal than wood,True,True,True,0.024,0.024,38.197,5,3,banana,"is, peeled, is, sliced",
+284,142/0.jpg,there is more wood than metal,False,False,False,0.026,0.026,37.832,5,0,banana,"is, sliced, is, peeled",
+119,59/1.jpg,there are two bananas and three apples,True,True,True,0.017,0.021,37.939,5,6,"dog, person","is, swimming, is, standing",
+118,59/0.jpg,there are three bananas and two apples,False,False,False,0.013,0.015,37.276,5,6,"dog, person","is, standing, is, swimming",
+715,357/1.jpg,a person without braids is exercising in front of a person with long braids,True,True,True,0.026,0.031,36.442,5,17,"person, cat","is, jumping, is, sitting",
+714,357/0.jpg,a person with long braids is exercising in front of a person without braids,False,False,False,0.015,0.016,37.378,5,9,"person, cat","is, sitting, is, jumping",
+4,2/0.jpg,the masked wrestler hits the unmasked wrestler,False,True,False,0.024,0.022,35.188,5,16,"cat, person","is, lying, is, stretching",
+5,2/1.jpg,the unmasked wrestler hits the masked wrestler,True,False,False,0.014,0.024,35.693,5,13,"cat, person","is, stretching, is, lying",
+358,179/0.jpg,there's a dog in a mask and a person beside it,False,True,False,0.009,0.018,39.835,7,12,people,"are, standing, are, sitting",more
+359,179/1.jpg,there's a dog and a person in a mask beside it,True,False,False,0.018,0.014,39.632,7,17,people,"are, sitting, are, standing",more
+59,29/1.jpg,a white dog is on a brown couch,False,True,False,0.024,0.025,37.646,7,11,"kid, pancake, adult","throws, sees",
+58,29/0.jpg,a brown dog is on a white couch,True,False,False,0.014,0.012,37.017,7,12,"kids, pancake, adult","see, throws",
+699,349/1.jpg,A dog whispering into a person's ear,True,True,True,0.009,0.012,43.291,5,1,"painting, walls",,"gray, white"
+698,349/0.jpg,A person whispering into a dog's ear,False,False,False,0.030,0.025,41.846,4,14,walls,painting,"white, gray"
+588,294/0.jpg,the sea is rough but the rocks are smooth,True,True,True,38.036,13,29,"person, standing, person",wearing,"shorter, blue, taller",,
+589,294/1.jpg,the sea is smooth but the rocks are rough,False,False,False,37.989,13,15,"person, standing, person",wearing,"taller, blue, shorter",,
+274,137/0.jpg,the dog's paw is on the cat's face,True,True,True,33.267,15,3,"person, bear, mask, blue, hand, side, person, panda, mask, glasses","wearing, wearing","left, pink",,
+275,137/1.jpg,the cat's paw is on the dog's face,False,False,False,33.421,14,14,"person, panda, mask, glasses, blue, hand, side, person, bear, mask","wearing, wearing","left, pink",,
+88,44/0.jpg,the heavy oncoming traffic is contrasted with the light outgoing traffic,True,True,True,35.645,4,0,"car, box",containing,many,,
+89,44/1.jpg,the light oncoming traffic is contrasted with the heavy outgoing traffic,False,False,False,36.496,4,0,"box, car",containing,many,,
+288,144/0.jpg,there are more people than stools,False,True,False,40.829,5,1,,"left, is, is","red, right, blue",,
+289,144/1.jpg,there are more stools than people,True,False,False,41.085,5,0,,"left, is, is","blue, right, red",,
+167,83/1.jpg,a diagram showing movement from left to right,True,True,True,32.381,8,0,"table, tennis, racket, ball",,many,,
+166,83/0.jpg,a diagram showing movement from right to left,False,False,False,33.008,8,5,"table, tennis, racket, ball",,many,,
+543,271/1.jpg,the person with facial hair runs and the other person cycles,True,True,True,42.919,5,4,"lions, tigers",,,,
+542,271/0.jpg,the person with facial hair cycles and the other person runs,False,False,False,41.996,5,2,"lions, tigers",,,,
+30,15/0.jpg,there are more skiers than snowboarders,True,False,False,38.210,9,0,"object, object",is,"small, spherical, heavier, big, spherical",,
+31,15/1.jpg,there are more snowboarders than skiers,False,True,False,38.573,9,0,"object, object",is,"big, spherical, heavier, small, spherical",,
+256,128/0.jpg,the fruit is heavy while the junk food is light,True,True,True,40.216,5,15,"person, person",blocking,"older, younger",,
+257,128/1.jpg,the fruit is light while the junk food is heavy,False,False,False,39.938,9,12,"person, person",blocking,"younger, older",,
+81,40/1.jpg,the less content person has the healthier food and the more content person has the less healthy food,True,True,True,43.186,5,0,"land, water",,"white, black",,
+80,40/0.jpg,the more content person has the healthier food and the less content person has the less healthy food,False,False,False,43.027,5,0,"land, water",,"black, white",,
+206,103/0.jpg,the lion is loud and the lionness is quiet,True,True,True,31.935,9,0,"cube, shape, faces, vertex","is, meet","smaller, lateral",,
+207,103/1.jpg,the lion is quiet and the lionness is loud,False,False,False,32.432,9,0,"shape, faces, vertex, cube","meet, is","lateral, smaller",,
+104,52/0.jpg,a frog is above rocks which are under the water,False,True,False,46.372,4,25,"bicycles, cars",,more,,
+105,52/1.jpg,a frog is under rocks which are above the water,True,False,False,46.660,4,21,"cars, bicycles",,more,,
+502,251/0.jpg,an inflatable flamingo on a person,True,True,True,41.491,4,4,"apples, pears",are,more,,
+503,251/1.jpg,a person on an inflatable flamingo,False,False,False,41.616,4,8,"pears, apples",are,more,,
+294,147/0.jpg,there's more cereal in the bowl than milk,True,False,False,41.547,4,18,"love, hate",is,more,,
+295,147/1.jpg,there's more milk in the bowl than cereal,False,True,False,42.269,4,19,"hate, love",is,more,,
+482,241/0.jpg,seat numbers increasing from left to right,True,True,True,45.887,4,3,"water, oil",,more,,
+483,241/1.jpg,seat numbers increasing from right to left,False,False,False,46.840,4,1,"oil, water",,more,,
+405,202/1.jpg,a box containing many a car,True,True,True,30.074,11,12,"person, person, jewelry, shoulders, consoles","cries, wearing",,,
+404,202/0.jpg,a car containing many a box,False,False,False,33.614,10,19,"person, consoles, person, jewelry, shoulders","wearing, cries",,,
+398,199/0.jpg,painting gray walls white,True,False,False,34.116,14,13,"person, hair, meat, product, person, hair, snacks, fries","eating, based","long, short",,
+399,199/1.jpg,painting white walls gray,False,True,False,34.162,16,15,"person, hair, meat, product, person, hair, snacks, fries","eating, based","short, long",,
+441,220/1.jpg,a line within the shadow,False,True,False,42.512,3,0,"water, boat",,,,
+440,220/0.jpg,a shadow within the line,True,False,False,40.810,3,3,"boat, water",,,,
+507,253/1.jpg,a large white inflatable flamingo along with some other lilos on the water including one that is mostly pink,True,False,False,37.966,8,22,"one, front, one",is,"faster, other",,
+506,253/0.jpg,a large pink inflatable flamingo along with some other lilos on the water including one that is mostly white,False,True,False,38.000,7,1,"one, one, front",is,"other, faster",,
+372,186/0.jpg,the person on the left is blowing bubbles and the person on the right is watching,True,True,True,37.110,12,20,"flies, honey, vinegar",catch,more,,
+373,186/1.jpg,the person on the right is blowing bubbles and the person on the left is watching,False,False,False,37.279,12,7,"flies, vinegar, honey",catch,more,,
+719,359/1.jpg,butchering red meat while wearing white but not yellow,True,False,False,38.066,9,0,"A, Z","starts, ends",,,
+718,359/0.jpg,butchering white meat while wearing yellow but not red,False,True,False,38.365,9,20,"Z, A","starts, ends",,,
+45,22/1.jpg,The person with more facial hair sleeps while the other lies awake,True,True,True,41.510,3,3,"shadow, line",,,,
+44,22/0.jpg,The person with more facial hair lies awake while the other sleeps,False,False,False,40.941,2,1,"line, shadow",,,,
+427,213/1.jpg,more oil than water,True,True,True,40.440,5,16,"face, fear",,brave,,
+426,213/0.jpg,more water than oil,False,False,False,40.306,4,11,"fear, face, brave",,,,
+661,330/1.jpg,what is yellow will soon be green,True,True,True,44.196,5,13,strength,need,,,
+660,330/0.jpg,what is green will soon be yellow,False,False,False,41.566,6,14,"back, strength",need,,,
+332,166/0.jpg,a person on a rock next to a dog,True,True,True,34.730,7,0,"one, middle, ones, side",is,taller,,
+333,166/1.jpg,a dog on a rock next to a person,False,False,False,34.547,7,11,"ones, side, one, middle","are, is",taller,,
+109,54/1.jpg,someone is with a helicopter in a car,True,True,True,43.469,2,9,fish,flying,,,
+108,54/0.jpg,someone is in a helicopter with a car,False,False,False,49.707,2,8,fishing,fly,,,
+349,174/1.jpg,light bulb made out of a plant,True,False,False,38.801,6,9,"car, car",is,"red, blue",,
+348,174/0.jpg,plant made out of a light bulb,False,True,False,38.612,6,13,"car, car",is,"blue, red",,
+617,308/1.jpg,a shorter person is covering the eyes of a taller person,True,True,True,35.060,13,22,"driver, shirt, front, person, top","wearing, is, wearing","other, sleeveless",,
+616,308/0.jpg,a taller person is covering the eyes of a shorter person,False,False,False,35.252,12,10,"driver, top, front, person, shirt","wearing, is, wearing","sleeveless, other",,
+15,7/1.jpg,water is in a bottle,True,True,True,29.897,4,0,"object, wood","rolls, is",,,
+14,7/0.jpg,a bottle is in water,False,False,False,30.015,4,15,"wood, object","is, rolls",,,
+659,329/1.jpg,a person with glasses pushes a person without glasses sitting in a box,True,True,True,37.550,4,13,"cat, human, screen",viewing,,,
+658,329/0.jpg,a person without glasses pushes a person with glasses sitting in a box,False,False,False,38.993,4,6,"human, cat, screen",viewing,,,
+632,316/0.jpg,a kid jumped then threw a basketball,True,True,True,39.007,5,8,"person, superhero","wishing, were",normal,,
+633,316/1.jpg,a kid threw a basketball then jumped,False,False,False,37.861,5,0,"superhero, person","wishing, were",normal,,
+422,211/0.jpg,there are more apples than pears,False,True,False,32.951,7,14,"mike, hand, left",raising,right,,
+423,211/1.jpg,there are more pears than apples,True,False,False,33.440,7,11,"mike, hand, right",raising,left,,
+73,36/1.jpg,a metal chess piece rests on wood objects,True,True,True,37.700,8,18,"person, hair, person, beard",,long,,
+72,36/0.jpg,a wood chess piece rests on metal objects,False,False,False,37.822,8,27,"person, beard, person, hair",,long,,
+6,3/0.jpg,a person watches an animal,True,True,True,33.739,13,15,"person, hair, shoulders, eyes, person's","has, are","brown, other, blue",,
+7,3/1.jpg,an animal watches a person,False,False,False,33.710,13,11,"person, hair, shoulders, eyes, person's","has, are","blue, other, brown",,
+394,197/0.jpg,some people are standing but more are sitting,True,False,False,36.191,6,19,"being, device, sun's, rays",intercepts,human,,
+395,197/1.jpg,some people are sitting but more are standing,False,True,False,36.229,6,17,"device, sun's, rays, being",intercepts,human,,
+761,380/1.jpg,one kid on a pool floatie and two kids swimming,False,True,False,42.340,4,11,"humans, phones",,more,,
+760,380/0.jpg,two kids on a pool floatie and one kid swimming,True,False,False,43.162,4,3,"phones, humans",,more,,
+756,378/0.jpg,a person stretching behind a brown dog,False,True,False,33.640,3,8,"person, tube",is,,,
+757,378/1.jpg,a brown dog stretching behind a person,True,False,False,34.122,3,0,"tube, person",is,,,
+535,267/1.jpg,the last vowel is E and the first consonant is N,False,True,False,37.363,7,14,"person's, head, rest, body",is,,,
+534,267/0.jpg,the first vowel is E and the last consonant is N,False,False,False,36.638,7,7,"rest, body, person's, head",is,,,
+334,167/0.jpg,an adult is flexing beside a child,True,True,True,47.075,2,17,person,,,,
+335,167/1.jpg,a child is flexing beside an adult,False,False,False,39.128,3,13,"person, board",,,,
+764,382/0.jpg,looking from above at a collection of similar objects below,False,True,False,42.228,6,0,"buttons, blue",,"more, red",,
+765,382/1.jpg,looking from below at a collection of similar objects above,True,False,False,42.181,6,0,buttons,,"more, blue, red",,
+595,297/1.jpg,the pet on the left is white and the one on the right is not,True,False,False,35.235,9,0,"object, top, left, one, bottom, right, group","is, is","purple, red",,
+594,297/0.jpg,the pet on the right is white and the one on the left is not,False,True,False,35.348,9,0,"object, bottom, right, one, top, group","is, left, is","purple, red",,
+597,298/1.jpg,the outlet carrying water from the faucet to the shower head is near the cold tap not the hot,True,False,False,37.771,5,11,"bottom, pointy, top",,flat,,
+596,298/0.jpg,the outlet carrying water from the faucet to the shower head is near the hot tap not the cold,False,True,False,37.252,5,9,"top, pointy, bottom",,flat,,
+60,30/0.jpg,a blue bird is next to a red berry,True,False,False,35.822,5,0,"seat, numbers, right",increasing,left,,
+61,30/1.jpg,a red bird is next to a blue berry,False,True,False,35.277,5,1,"seat, numbers, right","increasing, left",,,
+523,261/1.jpg,wearing a blue jacket over red,True,True,True,37.975,7,5,"number, right, number, left",is,larger,,
+522,261/0.jpg,wearing a red jacket over blue,False,False,False,38.104,7,1,"number, left, number, right",is,larger,,
+2,1/0.jpg,the taller person hugs the shorter person,True,False,False,37.910,8,29,"hair, person, face, head",,more,,
+3,1/1.jpg,the shorter person hugs the taller person,False,True,False,37.984,8,20,"hair, person, head, face",,more,,
+465,232/1.jpg,the person with hair to their shoulders has blue eyes and the other person's are brown,True,False,False,38.383,5,0,"knife, left, fork, right",,,,
+464,232/0.jpg,the person with hair to their shoulders has brown eyes and the other person's are blue,False,True,False,38.218,5,1,"knife, right, fork, left",,,,
+48,24/0.jpg,the person closer to the camera weightlifts and the person farther from the camera runs,False,True,False,37.541,3,15,"food, eyes",,,,
+49,24/1.jpg,the person closer to the camera runs and the person farther from the camera weightlifts,False,False,False,37.493,3,0,"eyes, food",,,,
+383,191/1.jpg,it is ground before the coffee is poured,True,False,False,38.985,2,0,"cars, bits",,,,
+382,191/0.jpg,the coffee is poured before it is ground,False,True,False,35.882,2,0,"bits, cars",,,,
+293,146/1.jpg,there's more coffee than milk,True,True,True,40.868,3,3,"person, top, world",,,,
+292,146/0.jpg,there's more milk than coffee,False,False,False,38.529,4,14,"world, top, person",,,,
+557,278/1.jpg,the person on the left is sitting on the sofa and the person on the very right is dancing,False,True,False,35.040,12,15,"people, one, right, hair, one, left","has, does",curly,,
+556,278/0.jpg,the person on the left is dancing and the person on the very right is sitting on the sofa,True,False,False,35.068,15,26,"people, one, left, hair, one, right","has, does",curly,,
+370,185/0.jpg,the glasses on the right are fuller than the glasses on the left,True,True,True,39.192,6,13,"cream, jam",,,,
+371,185/1.jpg,the glasses on the left are fuller than the glasses on the right,False,False,False,38.722,6,4,"jam, cream",,,,
+481,240/1.jpg,flat on top and pointy at the bottom,True,False,False,46.334,4,13,"kisses, hugs",,more,,
+480,240/0.jpg,flat at the bottom and pointy on top,False,True,False,46.323,4,11,"hugs, kisses",,more,,
+136,68/0.jpg,it ran away while they pursued,True,True,True,37.336,4,21,"flamingo, person",,inflatable,,
+137,68/1.jpg,they ran away while it pursued,False,False,False,38.805,4,0,"person, flamingo",,inflatable,,
+84,42/0.jpg,the larger person wears yellow and the smaller person does not,True,True,True,40.857,4,7,"bird, beak",,"pink, white",,
+85,42/1.jpg,the smaller person wears yellow and the larger person does not,False,False,False,40.807,4,5,"bird, beak",,"white, pink",,
+168,84/0.jpg,the flip flops are too big for these feet,False,True,False,32.720,13,2,"flamingo, lilos, water","including, is","large, pink, inflatable, other, white",,
+169,84/1.jpg,the feet are too big for these flip flops,True,False,False,32.562,13,8,"flamingo, lilos, water","including, is","large, white, inflatable, other, pink",,
+41,20/1.jpg,there is a bit less white chocolate than milk chocolate,True,False,False,34.483,7,0,"eyes, image, human","are, are","more, typical",,
+40,20/0.jpg,there is a bit less milk chocolate than white chocolate,False,True,False,34.074,7,0,"eyes, human, image","are, are","more, typical",,
+560,280/0.jpg,the large person is drinking from the small coffee cup,True,True,True,30.608,15,16,"doctor, stethoscope, neck, jacket, name, tag","is, is",confident,,
+561,280/1.jpg,the small person is drinking from the large coffee cup,False,False,False,31.236,15,25,"doctor, stethoscope, neck, name, tag, jacket","is, is",confident,,
+375,187/1.jpg,there's more foam on the right than on the left,True,True,True,38.766,6,1,"wind, turbines, clouds",,"few, many",,
+374,187/0.jpg,there's more foam on the left than on the right,False,False,False,38.139,6,0,"clouds, wind, turbines",,"few, many",,
+308,154/0.jpg,a dog is using a wheelchair next to a person,True,False,False,37.907,7,14,"adult, child","is, reading",young,,
+309,154/1.jpg,a person is using a wheelchair next to a dog,False,True,False,36.661,7,26,"child, adult","is, reading",young,,
+635,317/1.jpg,multiple cheerleaders supporting one cheerlearder,True,True,True,34.165,8,12,"shopping, basket, shelves, person, right","is, are","full, empty",,
+634,317/0.jpg,one cheerlearder supporting multiple cheerleaders,False,False,False,34.777,8,1,"shelves, person, right, shopping, basket","are, is","full, empty",,
+601,300/1.jpg,The adult looks at the kid with the magnifying glass,False,True,False,37.741,9,9,"person, baseball, bat, ball",playing,"Young, green, blue",,
+600,300/0.jpg,The adult with the magnifying glass looks at the kid,True,False,False,37.688,9,14,"person, baseball, bat, ball",playing,"Young, blue, green",,
+720,360/0.jpg,a child with a fake beard and an adult,False,True,False,41.634,4,15,wall,painting,"white, red",,
+721,360/1.jpg,an adult with a fake beard and a child,True,False,False,41.107,4,9,"wall, white",painting,red,,
+234,117/0.jpg,the circular mirror is on the left and the rectangular mirror is on the right,True,True,True,39.695,5,20,"jacket, blue",wearing,red,,
+235,117/1.jpg,the rectangular mirror is on the left and the circular mirror is on the right,False,False,False,38.847,6,19,"jacket, red",wearing,blue,,
+629,314/1.jpg,all paper airplanes fly on a curved path except for one which takes a straight one,False,True,False,40.909,4,0,car,"had, cleaned",,,
+628,314/0.jpg,all paper airplanes fly on a straight path except for one which takes a curved one,True,False,False,43.406,3,3,car,"had, cleaned",,,
+165,82/1.jpg,the person with the patterned shirt is straight-haired and the other is curly-haired,True,True,True,39.553,4,15,people,,"unfortunate, poor",,
+164,82/0.jpg,the person with the patterned shirt is curly-haired and the other is straight-haired,False,False,False,43.384,4,15,people,,"poor, unfortunate",,
+158,79/0.jpg,the person that is on the table is eating the food,False,True,False,37.344,4,0,"gloves, masks",are,less,,
+159,79/1.jpg,the person is eating the food that is on the table,True,False,False,37.127,4,0,"masks, gloves",are,less,,
+362,181/0.jpg,the person on the left has their arms up and the person on the right has their arms down,True,True,True,38.074,4,0,"pineapples, boxes",are,more,,
+363,181/1.jpg,the person on the right has their arms up and the person on the left has their arms down,False,False,False,38.670,4,0,"boxes, pineapples",are,more,,
+512,256/0.jpg,few wind turbines and many clouds,True,True,True,37.143,7,1,"bristles, ones","are, are","outer, blue, inner, white",,
+513,256/1.jpg,few clouds and many wind turbines,False,False,False,37.134,7,1,"bristles, ones","are, are","outer, white, inner, blue",,
+93,46/1.jpg,a person is drinking later and eating now,False,True,False,36.182,11,16,"vowel, E, consonant, N","is, is","first, last",,
+92,46/0.jpg,a person is drinking now and eating later,True,False,False,36.153,10,8,"vowel, E, consonant, N","is, is","last, first",,
+32,16/0.jpg,there are fewer forks than spoons,True,False,False,34.302,9,46,"cat, left, photo, paw, left",has,right,,
+33,16/1.jpg,there are fewer spoons than forks,False,True,False,34.452,11,46,"cat, left, photo, paw, right",has,left,,
+8,4/0.jpg,the person without earrings pays the person with earrings,False,True,False,39.630,3,1,text,is,"black, white",,
+9,4/1.jpg,the person with earrings pays the person without earrings,True,False,False,38.584,3,4,text,is,"white, black",,
+690,345/0.jpg,a worker in a yellow hat uses a drill to the left of where the opening in the wall is,True,True,True,40.412,5,23,"dog, cat","sits, stands",,,
+691,345/1.jpg,the opening in the wall is to the left of where a worker in a yellow hat uses a drill,False,False,False,40.659,5,19,"dog, cat","stands, sits",,,
+106,53/0.jpg,driving off the road and on the unpaved terrain,True,True,True,32.915,9,10,"person, hair, cycles, person, runs",,"facial, other",,
+107,53/1.jpg,driving on the road and off the unpaved terrain,False,False,False,33.988,9,15,"person, hair, runs, person, cycles",,"facial, other",,
+376,188/0.jpg,a fish is jumping from left to right,True,True,True,37.181,4,9,"laptop, guitar","using, is",close,,
+377,188/1.jpg,a fish is jumping from right to left,False,False,False,37.649,4,18,"guitar, laptop","using, is",close,,
+76,38/0.jpg,the happy person is on the right and the sad person is on the left,True,False,False,36.474,8,13,"person, coat, coffee, cup",,"blue, brown, ish",,
+77,38/1.jpg,the sad person is on the right and the happy person is on the left,False,True,False,36.565,8,10,"person, ish, coat, coffee, cup",,"brown, blue",,
+86,43/0.jpg,a big cat is next to a small dog,True,True,True,31.504,2,0,"space, star",,,,
+87,43/1.jpg,a small cat is next to a big dog,False,False,False,45.223,2,4,"star, space",,,,
+270,135/0.jpg,three white and two brown eggs,True,True,True,40.269,2,0,"star, death",,,,
+271,135/1.jpg,two white and three brown eggs,False,False,False,40.379,2,0,"death, star",,,,
+116,58/0.jpg,it hatched before it was eaten,False,True,False,36.181,10,13,"person, noise","is, making, is","younger, other, silent",,
+117,58/1.jpg,it was eaten before it hatched,True,False,False,36.049,10,19,"person, noise","is, is, making","younger, silent, other",,
+532,266/0.jpg,the outer bristles are blue and the inner ones are white,True,True,True,37.384,6,19,"one, left","is, is","happy, other, sad",,
+533,266/1.jpg,the outer bristles are white and the inner ones are blue,False,False,False,37.261,6,20,"one, left","is, is","sad, other, happy",,
+450,225/0.jpg,the red car is behind the blue car,True,True,True,35.234,9,15,"person, left, person, right, sofa","is, dancing, is, sitting",very,,
+451,225/1.jpg,the blue car is behind the red car,False,False,False,35.089,9,8,"person, left, sofa, person, right","is, sitting, is, dancing",very,,
+57,28/1.jpg,a person walking in a field of red flowers with a yellow dress,True,True,True,36.583,9,21,"person, left, one, right","is, crying, is, smiling",,,
+56,28/0.jpg,a person walking in a field of yellow flowers with a red dress,False,False,False,36.299,9,19,"person, left, one, right","is, smiling, is, crying",,,
+387,193/1.jpg,the banana is sliced then it is peeled,True,True,True,35.028,6,17,"person, coffee, cup","is, drinking","large, small",,
+386,193/0.jpg,the banana is peeled then it is sliced,False,False,False,35.261,6,14,"person, coffee, cup","is, drinking","small, large",,
+46,23/0.jpg,the person in the middle is floating and some others are standing,False,True,False,35.148,5,6,"rubber, metal",,"hot, cool",,
+47,23/1.jpg,the person in the middle is standing and some others are floating,True,False,False,37.386,5,0,"rubber, metal",,"cool, hot",,
+185,92/1.jpg,someone talks on the phone happily while another person sits angrily,False,True,False,35.654,5,20,"shape, square, one",is,triangular,,
+184,92/0.jpg,someone talks on the phone angrily while another person sits happily,True,False,False,34.900,6,3,"shape, one",is,"square, triangular",,
+545,272/1.jpg,using the guitar while the laptop is close by,True,False,False,42.625,5,0,,,"rough, smooth",,
+544,272/0.jpg,using the laptop while the guitar is close by,False,True,False,43.089,5,0,,,"smooth, rough",,
+430,215/0.jpg,a person with long hair eating a meat-based product while a person with short hair snacks on some fries,True,False,False,35.808,8,24,"one, one, white","is, is","green, fast, slow",,
+431,215/1.jpg,a person with short hair eating a meat-based product while a person with long hair snacks on some fries,False,True,False,35.453,8,4,"one, one, white","is, is","green, slow, fast",,
+682,341/0.jpg,a person wearing yellow with their feet in the air and a person wearing stripes,False,True,False,38.762,4,0,"humans, balls",are,more,,
+683,341/1.jpg,a person wearing stripes with their feet in the air and a person wearing yellow,True,False,False,37.017,5,4,"balls, humans",are,more,,
+716,358/0.jpg,"in the stadium, the person wearing gray outperformed the one wearing blue",True,True,True,40.663,4,6,"legs, wheels",are,more,,
+717,358/1.jpg,"in the stadium, the person wearing blue outperformed the one wearing gray",False,False,False,40.226,4,16,"wheels, legs",are,more,,
+499,249/1.jpg,"first the jam, then the cream",True,False,False,33.633,17,13,"group, people, hair, hair, business, context",,"longer, short",,
+498,249/0.jpg,"first the cream, then the jam",False,True,False,33.512,16,16,"group, people, hair, hair, business, context",,"longer, short",,
+738,369/0.jpg,a deer's nose is resting on a child's hand,False,True,False,33.331,8,8,"gesture, person, understanding, person","sitting, is, supporting, standing",,,
+739,369/1.jpg,a child's hand is resting on a deer's nose,True,False,False,33.894,8,11,"gesture, person, understanding, person","standing, is, supporting, sitting",,,
+614,307/0.jpg,the person is too big for the small door,False,True,False,39.800,4,22,"circle, cross",is,,,
+615,307/1.jpg,the door is too small for the big person,True,False,False,39.450,4,0,"cross, circle",is,,,
+208,104/0.jpg,there is a pink couch with green pillows,True,True,True,33.848,11,0,"view, tree, soil, field",turned,"aerial, green, brown, green",,
+209,104/1.jpg,there is a green couch with pink pillows,False,False,False,33.732,11,0,"view, tree, field, soil",turned,"aerial, green, green, brown",,
+227,113/1.jpg,brown dog wearing a black sweater,False,True,False,30.841,10,8,"therapist, kinesio, tape",inspecting,"physical, blue, elastic, therapeutic, pink",,
+226,113/0.jpg,black dog wearing a brown sweater,True,False,False,30.871,10,8,"therapist, kinesio, tape, blue",inspecting,"physical, pink, elastic, therapeutic",,
+273,136/1.jpg,the fish is in the plastic,True,False,False,34.029,9,0,"skipping, rope, color, shoelaces, shoes",is,"different, similar",,
+272,136/0.jpg,the plastic is in the fish,False,True,False,33.769,9,4,"skipping, rope, color, shoelaces, shoes",is,"similar, different",,
+182,91/0.jpg,clothing on lines,True,True,True,33.540,4,0,"balloon, weight","is, being, lifted",blue,,
+183,91/1.jpg,lines on clothing,False,False,False,36.226,4,1,"weight, balloon","is, being, lifted",blue,,
+792,396/0.jpg,an odd number of sweet things on a plate with an even number of sides,True,False,False,38.076,5,0,"sea, rocks","is, are","rough, smooth",,
+793,396/1.jpg,an even number of sweet things on a plate with an odd number of sides,False,True,False,38.096,5,0,"sea, rocks","is, are","smooth, rough",,
+187,93/1.jpg,one boat and two directions down the stream,True,True,True,34.064,8,3,"melting, food, brown","is, is","white, cold, warm",,
+186,93/0.jpg,two boats and one direction down the stream,False,False,False,34.005,8,6,"melting, food, brown","is, is","white, warm, cold",,
+518,259/0.jpg,Young person playing baseball with a green bat and blue ball,True,True,True,36.409,11,29,"person, beard, person, hair","is, smiling, is",long,,
+519,259/1.jpg,Young person playing baseball with a blue bat and green ball,False,False,False,36.272,11,28,"person, hair, person, beard","is, smiling, is",long,,
+224,112/0.jpg,the red team kicking the ball directly next to the blue team,True,True,True,35.489,8,19,"pet, right, one, left","is, is",white,,
+225,112/1.jpg,the blue team kicking the ball directly next to the red team,False,False,False,35.503,8,48,"pet, left, one, right","is, is",white,,
+211,105/1.jpg,dark colored dog with light colored cat,True,True,True,33.887,15,14,"outlet, water, faucet, shower, head, tap, cold","carrying, is",hot,,
+210,105/0.jpg,light colored dog with dark colored cat,False,False,False,34.041,15,2,"outlet, water, faucet, shower, head, tap","carrying, is","cold, hot",,
+496,248/0.jpg,two people; the one on the right has curly hair and the one on the left doesn't,True,False,False,36.553,12,3,"ball, one","is, is","larger, heavier, smaller, lighter",,
+497,248/1.jpg,two people; the one on the left has curly hair and the one on the right doesn't,False,True,False,36.679,12,10,"ball, one","is, is","larger, lighter, smaller, heavier",,
+723,361/1.jpg,"on halloween, a child dressed as a mammal is to the right of a child dressed as an insect",True,False,False,38.555,6,14,"adult, glass, kid","magnifying, looks",,,
+722,361/0.jpg,"on halloween, a child dressed as an insect is to the right of a child dressed as a mammal",False,True,False,39.089,5,16,"adult, kid, glass","looks, magnifying",,,
+745,372/1.jpg,a dog towering over a spider,False,True,False,33.086,5,25,"dog, blanket, spots",is,,,
+744,372/0.jpg,a spider towering over a dog,True,False,False,29.066,4,20,"blanket, dog, spots",is,,,
+188,94/0.jpg,The dog rides without a visible tongue,True,False,False,30.452,3,5,"mouse, cake, birthday",is,,,
+189,94/1.jpg,The dog rides with a visible tongue out,False,True,False,35.545,3,11,"birthday, cake, mouse",is,,,
+110,55/0.png,the green one can fit inside the blue one and the blue one can fit outside the green one,True,False,False,37.773,7,1,"animal, water","blooded, is","cold, happy, warm",,
+111,55/1.jpg,the green one can fit outside the blue one and the blue one can fit inside the green one,False,True,False,37.925,7,1,"animal, water","blooded, is","warm, happy, cold",,
+317,158/1.jpg,there's a dog in a stroller next to a human,True,True,True,36.697,7,3,"queen, king","is, taking","white, black",,
+316,158/0.jpg,there's a human in a stroller next to a dog,False,True,False,36.568,7,6,"queen, king","is, taking","black, white",,
+599,299/1.jpg,the larger ball is lighter and the smaller one is heavier,True,False,False,38.866,5,13,"animals, home","visiting, be",fun,,
+598,299/0.jpg,the larger ball is heavier and the smaller one is lighter,False,True,False,38.707,5,9,"animals, home","visiting, be",fun,,
+452,226/0.jpg,the driver wearing a shirt is in front of the other person wearing a sleeveless top,False,True,False,37.577,4,34,"person, cat",is,happy,,
+453,226/1.jpg,the driver wearing a sleeveless top is in front of the other person wearing a shirt,True,False,False,36.232,4,38,"cat, person",is,happy,,
+300,150/0.jpg,check a rip,False,True,False,35.198,6,10,"person, door",is,"big, small",,
+301,150/1.jpg,rip a check,True,False,False,36.855,6,11,"door, person",is,"small, big",,
+178,89/0.jpg,the person in pink was close to not winning,True,False,False,36.549,11,9,"person, eyes, person","is, covering","taller, shorter",,
+179,89/1.png,the person in pink was not close to winning,False,True,False,36.583,11,10,"person, eyes, person","is, covering","shorter, taller",,
+249,124/1.jpg,they're enjoying cold water on a hot day,False,True,False,36.765,3,2,"plant, bug","is, eating",,,
+248,124/0.jpg,they're enjoying hot water on a cold day,True,False,False,38.951,3,9,"bug, plant","is, eating",,,
+622,311/0.jpg,the green leaves will soon be red as the seasons change,True,False,False,39.921,4,0,"bug, leaf",has,,,
+623,311/1.jpg,the red leaves will soon be green as the seasons change,False,True,False,41.271,4,0,"leaf, bug",has,,,
+754,377/0.jpg,a person spraying water on someone else and a person on a bike,True,False,False,36.137,6,7,"leaves, seasons","be, change","green, red",,
+755,377/1.jpg,a person spraying water on a person on a bike and someone else,False,True,False,36.139,6,0,"leaves, seasons","be, change","red, green",,
+345,172/1.jpg,the plastic is filled with water,True,False,False,37.901,5,0,"wall, blue","be, painted",white,,
+344,172/0.jpg,the water is filled with plastic,False,True,False,37.124,6,0,wall,"be, painted","blue, white",,
+369,184/1.jpg,a pink scoop of ice cream on bottom and a blue scoop on top,True,True,True,37.102,8,0,"moon, sun's, rays, earth","prevents, falling",,,
+368,184/0.jpg,a pink scoop of ice cream on top and a blue scoop on bottom,False,False,False,36.974,8,1,"earth, sun's, rays, moon","prevents, falling",,,
+339,169/1.jpg,a red blanket is underneath a cat,False,True,False,33.502,11,0,"paper, airplanes, path, one","fly, takes, curved",straight,,
+338,169/0.jpg,a cat is underneath a red blanket,True,False,False,33.283,10,0,"paper, airplanes, path, one","fly, curved, takes",straight,,
+135,67/1.jpg,the person in a black coat looks back and the person in a brown coat looks forward,True,True,True,36.399,5,20,"person, pants",is,big,,
+134,67/0.jpg,the person in a brown coat looks back and the person in a black coat looks forward,False,False,False,34.908,5,18,"pants, person",is,big,,
+442,221/0.jpg,the brave in the face of fear,False,True,False,36.690,6,15,"kid, basketball","jumped, threw",,,
+443,221/1.jpg,fear in the face of the brave,True,False,False,37.136,6,18,"kid, basketball","threw, jumped",,,
+569,284/1.jpg,the green one is slow and the one in white is comparatively fast,True,True,True,31.620,7,4,"cheerlearder, cheerleaders",supporting,multiple,,
+568,284/0.jpg,the green one is fast and the one in white is comparatively slow,False,False,False,33.375,7,10,"cheerleaders, cheerlearder",supporting,multiple,,
+485,242/1.jpg,the number on the left is larger than the number on the right,True,False,False,41.843,5,3,"persons, scarf",wearing,,,
+484,242/0.jpg,the number on the right is larger than the number on the left,False,True,False,41.127,5,8,"person, scarfs",wearing,,,
+488,244/0.jpg,the knife on the left and the fork on the right,True,True,True,34.096,3,8,"head, pet",,human,,
+489,244/1.jpg,the knife on the right and the fork on the left,False,False,False,33.637,3,16,"pet, head, human",,,,
+239,119/1.jpg,the dress on the left is short and the dress on the right is long,True,True,True,36.270,4,0,"cow, moon",is,,,
+238,119/0.jpg,the dress on the left is long and the dress on the right is short,False,False,False,33.682,4,0,"moon, cow",is,,,
+424,212/0.jpg,there is more love than hate,True,True,True,33.806,3,15,"someone, babys, pet",,,,
+425,212/1.jpg,there is more hate than love,False,False,False,41.357,3,4,"someone, baby",pets,,,
+413,206/1.jpg,a big spherical object is heavier than a small spherical object,True,False,False,50.181,2,5,"cat, house",,,,
+412,206/0.jpg,a small spherical object is heavier than a big spherical object,False,True,False,48.836,2,25,"house, cat",,,,
+391,195/1.jpg,the person is sitting while the cat is jumping,True,True,True,40.003,2,7,"gold, pan",,,,
+390,195/0.jpg,the person is jumping while the cat is sitting,False,False,False,37.586,2,19,"pan, gold",,,,
+577,288/1.jpg,the gesture of the person standing up is supporting the understanding of the person sitting down,True,False,False,45.624,2,2,"water, plants",,,,
+576,288/0.jpg,the gesture of the person sitting down is supporting the understanding of the person standing up,False,True,False,45.352,2,0,"plants, water",,,,
+214,107/0.jpg,black socks and orange shoes,False,True,False,33.833,4,19,"businessperson, fall",,down,,
+215,107/1.png,orange socks and black shoes,True,False,False,37.765,4,21,"businessperson, fall",,,,
+703,351/1.jpg,someone walking lines cut into green plants,False,True,False,35.724,5,4,"person, swimcap",outswam,red,,
+702,351/0.jpg,walking someone cut lines into green plants,True,False,False,34.471,6,7,"person, swimcap, swamout",,red,,
+571,285/1.jpg,there are more balls than humans,True,False,False,44.989,2,16,ship,manning,,,
+570,285/0.jpg,there are more humans than balls,False,True,False,27.104,2,19,mann,shiping,,,
+626,313/0.jpg,the moon prevents the sun's rays from falling on the earth,True,False,False,35.977,9,14,"person, sweater, front, person, sweater","wearing, stands, is, wearing",,,
+627,313/1.jpg,the earth prevents the sun's rays from falling on the moon,False,True,False,35.809,9,16,"person, sweater, front, person, sweater","is, wearing, stands, wearing",,,
+276,138/0.jpg,the computer's screen is on and the phone's screen is off,False,True,False,32.890,10,18,"person, glasses, person, glasses, box","pushes, sitting",,,
+277,138/1.jpg,the phone's screen is on and the computer's screen is off,True,False,False,33.291,10,22,"person, glasses, person, glasses, box","pushes, sitting",,,
+400,200/0.jpg,a shorter person wearing blue standing next to a taller person,False,True,False,39.963,4,8,,"is, be","green, yellow",,
+401,200/1.jpg,a taller person wearing blue standing next to a shorter person,True,False,False,39.866,4,0,,"is, be","yellow, green",,
+340,170/0.jpg,the person is bigger than the house,True,True,True,32.943,8,14,"animal, tail",have,,,
+341,170/1.jpg,the house is bigger than the person,False,False,False,34.399,8,4,"animal, tail",have,,,
+775,387/1.jpg,There are pink flowers not below the bird with yellow head feathers,True,False,False,37.802,3,9,"mouse, dog","is, touching",,,
+774,387/0.jpg,There are not pink flowers below the bird with yellow head feathers,False,True,False,37.942,3,15,"dog, mouse","is, touching",,,
+151,75/1.jpg,the kid looks at them with the magnifying glass,False,True,False,42.982,2,7,compliments,fishing,,,
+150,75/0.jpg,the kid with the magnifying glass looks at them,True,False,False,44.597,3,8,"compliments, fishing",,,,
+438,219/0.jpg,"It starts with ""A"" and ends with ""Z""",False,True,False,35.036,5,16,"person, hands",dusting,,,
+439,219/1.jpg,"It starts with ""Z"" and ends with ""A""",True,False,False,33.614,5,11,"person, dusting",hands,,,
+747,373/1.jpg,a hollow tube going into a car,True,False,False,33.866,21,14,"person, shoes, bookshelf, duster, person, shoes, wine, glass","wearing, cleaning, wearing, drinks, relaxes","black, orange, green, orange",,
+746,373/0.jpg,a car going into a hollow tube,False,True,False,33.860,21,13,"person, shoes, bookshelf, duster, person, shoes, wine, glass","wearing, cleaning, wearing, drinks, relaxes","green, orange, black, orange",,
+624,312/0.jpg,the white wall will soon be painted blue,True,False,False,35.319,17,7,"person, hair, light, shirt, person, hair, couch","is, ironing, sits","short, blue, long, white",,
+625,312/1.jpg,the blue wall will soon be painted white,False,True,False,35.364,17,6,"person, hair, light, shirt, person, hair, couch","is, ironing, sits","long, blue, short, white",,
+42,21/0.jpg,a person sits and a dog stands,True,True,True,36.628,4,1,"duck, shoes",,yellow,,
+43,21/1.jpg,a person stands and a dog sits,False,False,False,34.848,3,0,"duck, shoes",,yellow,,
+606,303/0.png,The cold-blooded animal isn't happy in warm water,False,True,False,35.501,7,0,"child, front, row, rubber, ducks",facing,yellow,,
+607,303/1.png,The warm-blooded animal isn't happy in cold water,True,False,False,33.783,7,0,"front, child, row, rubber, ducks",facing,yellow,,
+581,290/1.jpg,aerial view of a green tree in a green field next to the brown freshly turned soil,False,True,False,37.638,3,0,"bird, person",cooking,,,
+580,290/0.jpg,aerial view of a green tree in the brown freshly turned soil next to a green field,True,False,False,39.498,3,0,"person, bird",cooking,,,
+231,115/1.jpg,person in orange is reading the white book,True,False,False,32.228,8,13,"person, person, stripes","wearing, wearing, jumping",yellow,,
+230,115/0.jpg,person in white is reading the orange book,False,True,False,32.918,8,11,"jumping, person, person, stripes","wearing, wearing",yellow,,
+463,231/1.jpg,a person with a beard behind a person with long hair,True,False,False,34.192,10,9,"person, feet, air, person, stripes","wearing, wearing",yellow,,
+462,231/0.jpg,a person with long hair behind a person with a beard,False,True,False,34.348,10,3,"person, stripes, feet, air, person, yellow","wearing, wearing",,,
+221,110/1.jpg,there's one yellow and many blue balls,True,False,False,35.293,9,9,"things, stripes",become,"darker, light",,
+220,110/0.jpg,there's one blue and many yellow balls,False,True,False,32.586,9,6,"things, stripes",become,"light, darker",,
+537,268/1.jpg,the cat on the left of the photo has its left paw ahead of its right,True,False,False,37.052,3,13,something,hammering,,,
+536,268/0.jpg,the cat on the left of the photo has its right paw ahead of its left,False,True,False,45.353,3,14,something,hammering,,,
+773,386/1.jpg,one version of two persons,False,True,False,34.978,12,15,"person, baby, screwdriver, piece, furniture","sits, using, assemble","orange, white",,
+772,386/0.jpg,two versions of one person,True,False,False,34.979,12,19,"baby, person, screwdriver, piece, furniture","sits, using, assemble","orange, white",,
+689,344/1.jpg,A baby sits next to a person using an orange screwdriver to assemble a white piece of furniture,False,True,False,34.023,11,8,"worker, hat, drill, left, opening, wall","uses, is",yellow,,
+688,344/0.jpg,A person sits next to a baby using an orange screwdriver to assemble a white piece of furniture,True,False,False,33.995,13,10,"opening, wall, left, worker, hat, drill","is, uses",yellow,,
+63,31/1.png,The yellow book is above the blue book and below the red book,True,False,False,40.605,5,32,"animal, hair",curled,small,,
+62,31/0.png,The red book is above the yellow book and below the blue book,False,True,False,37.064,4,18,"animal, hair",curled,small,,
+762,381/0.jpg,gears for moving something,False,True,False,37.598,6,0,"hand, glove, hand",pulls,"right, left",,
+763,381/1.jpg,moving gears for something,True,False,False,37.751,6,3,"hand, glove, hand",pulls,"left, right",,
+133,66/1.jpg,the shorter person's arm is around the taller person's shoulder,True,True,True,36.247,8,14,"dog, person, feet, car, window",hanging,,,
+132,66/0.jpg,the taller person's arm is around the shorter person's shoulder,False,False,False,34.748,8,24,"dog, feet, car, window, person",hanging,,,
+671,335/1.jpg,a person wearing green shoes cleaning a bookshelf with an orange duster while a person wearing black shoes drinks wine from an orange glass and relaxes,True,True,True,39.947,4,25,"person, dog's, ear",whispering,,,
+670,335/0.jpg,a person wearing black shoes cleaning a bookshelf with an orange duster while a person wearing green shoes drinks wine from an orange glass and relaxes,False,False,False,39.535,4,32,"dog, person's, ear",whispering,,,
+592,296/0.jpg,the person with a beard is smiling while the person with long hair is not,False,True,False,36.493,6,6,"ear, donkey, secret","is, whispering",,,
+593,296/1.jpg,the person with long hair is smiling while the person with a beard is not,True,False,False,34.491,5,24,"donkey, ear, one, secret","is, whispering",,,
+323,161/1.jpg,the adult is throwing the child the ball,False,True,False,31.553,6,7,"someone, lines, plants","walking, cut",green,,
+322,161/0.jpg,the child is throwing the adult the ball,True,False,False,31.203,6,5,"someone, walking, lines, plants",cut,green,,
+521,260/1.jpg,painting the red wall white,True,False,False,36.410,5,0,"volcano, water, steam",makes,,,
+520,260/0.jpg,painting the white wall red,False,True,False,37.248,5,0,"water, volcano, steam",makes,,,
+711,355/1.jpg,An adult lying next to a child wearing purple,False,True,False,39.235,5,15,"child, bike, adult",riding,,,
+710,355/0.jpg,An adult wearing purple lying next to a child,True,False,False,39.182,5,20,"child, adult, bike",riding,,,
+388,194/0.jpg,the dog is swimming and the person is standing,True,False,False,40.086,4,6,"adult, helmet, child",putting,,,
+389,194/1.jpg,the dog is standing and the person is swimming,False,True,False,38.575,4,8,"child, helmet, adult",putting,,,
+572,286/0.jpg,there are more legs than wheels,True,False,False,38.311,6,1,"adult, purple, child","wearing, lying",,,
+573,286/1.jpg,there are more wheels than legs,False,True,False,37.757,6,13,"adult, child, purple","lying, wearing",,,
+331,165/1.jpg,there's a map on a phone,True,False,False,33.551,12,8,"fencer, pants, point, fencer, wheelchair","is, wearing, having, scored, using",black,,
+330,165/0.jpg,there's a phone on a map,False,True,False,33.047,12,3,"fencer, point, fencer, pants, wheelchair","having, scored, is, wearing, using",black,,
+708,354/0.jpg,an adult putting a helmet on a child,False,True,False,35.967,10,12,"person, braids, front, person, braids","is, exercising",long,,
+709,354/1.jpg,a child putting a helmet on an adult,True,False,False,35.881,10,12,"person, braids, front, person, braids","is, exercising",long,,
+65,32/1.png,astronauts in red suits with a blue planet in the background,False,True,False,32.965,8,10,"stadium, person, gray, one, blue","wearing, outperformed, wearing",,,
+64,32/0.png,astronauts in blue suits with a red planet in the background,True,False,False,32.978,8,8,"stadium, person, one, gray","wearing, outperformed, wearing",blue,,
+618,309/0.jpg,the plant is eating the bug,False,True,False,35.861,9,3,meat,"butchering, wearing","white, yellow, red",,
+619,309/1.jpg,the bug is eating the plant,True,False,False,35.487,9,7,meat,"butchering, wearing","red, white, yellow",,
+437,218/1.jpg,You can catch more flies with vinegar than you can with honey,False,True,False,36.881,6,28,"child, beard, adult",,fake,,
+436,218/0.jpg,You can catch more flies with honey than you can with vinegar,True,False,False,39.154,5,22,"adult, beard, child",,fake,,
+291,145/1.jpg,there is more white wine than red wine,True,False,False,33.390,12,2,"halloween, child, insect, right, child, mammal","dressed, is, dressed",,,
+290,145/0.jpg,there is more red wine than white wine,False,True,False,33.416,12,10,"halloween, child, mammal, right, child, insect","dressed, is, dressed",,,
+673,336/1.jpg,a person with long hair is happily ironing a light blue shirt while a person with short hair sits on a white couch,True,False,False,37.215,10,18,"office, complex, windows, lawn",landscaped,"modern, many",,
+672,336/0.jpg,a person with short hair is happily ironing a light blue shirt while a person with long hair sits on a white couch,False,True,False,36.240,9,3,"lawn, office, complex, windows",landscaped,"modern, many",,
+250,125/0.jpg,concrete floors with wood walls,True,False,False,34.677,5,0,"tree, car","is, parked",,,
+251,125/1.jpg,wood floors with concrete walls,False,True,False,35.358,6,6,"car, tree","parked, is",,,
+403,201/1.jpg,a person wearing a panda mask with glasses in blue on the left hand side of a person wearing a bear mask in pink,True,True,True,32.241,4,4,train,"are, parking",,,
+402,201/0.jpg,a person wearing a bear mask in blue on the left hand side of a person wearing a panda mask with glasses in pink,False,False,False,35.635,4,5,park,"are, training",,,
+587,293/1.jpg,the weight is being lifted by the blue balloon,True,False,False,42.241,3,18,"athlete, water",running,,,
+586,293/0.jpg,the blue balloon is being lifted by the weight,False,True,False,32.936,3,4,"water, athlete",running,,,
+173,86/1.jpg,a person lying on a couch with a dog sitting on the floor,True,True,True,46.426,2,21,horse,getting,wet,,
+172,86/0.jpg,a dog sitting on a couch with a person lying on the floor,False,False,False,43.235,4,19,horse,getting,wet,,
+94,47/0.jpg,the sailboat sails close but the beach is far away,True,False,False,34.730,10,6,"glasses, water, person, head, leg",are,full,,
+95,47/1.jpg,the sailboat sails far away but the beach is close,False,True,False,35.166,9,9,"person, head, leg, glasses, water",are,full,,
+461,230/1.jpg,a mike in the left hand while raising the right,True,True,True,35.022,4,7,"person, head, squirrel","is, touching",,,
+460,230/0.jpg,a mike in the right hand while raising the left,False,False,False,34.827,4,3,"squirrel, head, person","is, touching",,,
+652,326/0.jpg,outswam the person in the red swimcap,True,False,False,34.635,5,23,"deer's, nose, child, hand","is, resting",,,
+653,326/1.jpg,the person in the red swimcap swamout,False,True,False,34.689,5,17,"child, hand, deer, nose","is, resting",,,
+651,325/1.jpg,the businessperson's fall down,True,True,True,41.599,4,3,"sparklers, hand",,,,
+650,325/0.jpg,the businessperson's down fall,False,True,False,40.361,4,1,"sparkler, hands",,,,
+591,295/1.jpg,the melting white food is warm while the brown is cold,True,False,False,41.443,4,4,"animal, person, food",giving,,,
+590,295/0.jpg,the melting white food is cold while the brown is warm,False,True,False,40.913,4,15,"person, animal, food",giving,,,
+162,81/0.jpg,they hold a suitcase handle with their left hand and they hold a passport with their right hand,False,True,False,42.417,4,18,"spider, dog",towering,,,
+163,81/1.jpg,they hold a passport with their left hand and they hold a suitcase handle with their right hand,True,False,False,41.030,4,15,"dog, spider",towering,,,
+505,252/1.jpg,a white bird with a pink beak,False,True,False,36.096,4,1,"car, tube",going,hollow,,
+504,252/0.jpg,a pink bird with a white beak,True,False,False,37.926,4,1,"tube, car",going,hollow,,
+0,0/0.jpg,an old person kisses a young person,False,True,False,34.016,11,15,"people, clothes, colors, side, tennis, net","wearing, are","same, different",,
+1,0/1.jpg,a young person kisses an old person,True,False,False,34.561,11,16,"people, clothes, colors, side, tennis, net","wearing, are","different, same",,
+79,39/1.jpg,the helpful person is on the left and the hurt person is on the right,True,False,False,38.820,5,9,things,"living, drinking",,,
+78,39/0.jpg,the hurt person is on the left and the helpful person is on the right,False,True,False,43.187,3,7,"living, things",drinking,,,
+677,338/1.jpg,front facing child in row of yellow rubber ducks,False,True,False,36.898,5,10,"person, water, lasso",using,,,
+676,338/0.jpg,child in front facing row of yellow rubber ducks,True,False,False,35.665,5,6,"person, water, lasso",using,,,
+511,255/1.jpg,"the confident doctor's stethoscope is around their neck, and their name tag is over their jacket",True,False,False,36.063,8,14,"person, water, someone, person, bike",spraying,else,,
+510,255/0.jpg,"the confident doctor's stethoscope is around their neck, and their jacket is over their name tag",False,True,False,34.927,8,14,"person, water, person, bike, someone",spraying,else,,
+194,97/0.jpg,they are using no bait but still got fish,False,True,False,33.364,5,23,"person, dog",stretching,brown,,
+195,97/1.jpg,they are using bait but still got no fish,True,False,False,36.420,5,7,"dog, person",stretching,brown,,
+261,130/1.jpg,the cup on the left is filled second and the cup on the right is filled first,False,True,False,41.133,6,1,"person, flotation, device",carrying,more,,
+260,130/0.jpg,the cup on the left is filled first and the cup on the right is filled second,True,False,False,40.314,6,5,"flotation, device, person",carrying,more,,
+613,306/1.jpg,the cat is not happy with the person,True,True,True,36.235,8,15,"kids, pool, floatie, kid, swimming",,,,
+612,306/0.jpg,the person is not happy with the cat,False,False,False,36.107,8,8,"kid, pool, floatie, kids, swimming",,,,
+71,35/1.jpg,a rectangular sign is above a circular sign,True,False,False,38.057,3,0,"gears, something",moving,,,
+70,35/0.jpg,a circular sign is above a rectangular sign,False,True,False,38.565,3,7,"gears, something",moving,,,
+579,289/1.jpg,the cross is above the circle,False,True,False,36.109,6,0,"collection, objects",looking,similar,,
+578,289/0.jpg,the circle is above the cross,True,False,False,34.690,7,0,"collection, objects",looking,similar,,
+279,139/1.jpg,the dog is in the passenger's seat and the person is in the driver's seat,False,True,False,35.891,8,2,"toy, herbivore, top, toy, carnivore",stands,least,,
+278,139/0.jpg,the dog is in the driver's seat and the person is in the passenger's seat,True,False,False,36.284,8,1,"toy, herbivore, top, toy, carnivore",stands,least,,
+149,74/1.jpg,rocking out on a walk,True,False,False,34.488,4,15,"person, chair",supports,small,,
+148,74/0.jpg,walking out on a rock,False,True,False,38.972,4,11,"chair, person",supports,small,,
+584,292/0.jpg,the skipping rope color is different to the shoelaces but similar to the shoes,False,True,False,34.175,10,9,"person, person, shirt, ping, pong, ball","smiles, wearing, checked, is, hitting",,,
+585,292/1.jpg,the skipping rope color is similar to the shoelaces but different to the shoes,True,False,False,34.358,10,15,"person, shirt, person, ping, pong, ball","wearing, checked, smiles, is, hitting",,,
+326,163/0.jpg,some green on the ball,False,True,False,41.212,4,22,"versions, person",,,,
+327,163/1.jpg,the ball on some green,True,False,False,32.551,4,34,"version, persons",,,,
+253,126/1.jpg,the person on the left has straight hair and the person on the right has curly hair,False,True,False,28.656,9,6,"flowers, bird, head, feathers",are,"pink, yellow",,
+252,126/0.jpg,the person on the left has curly hair and the person on the right has straight hair,True,False,False,29.952,8,6,"flowers, bird, head, feathers",are,"pink, yellow",,
+228,114/0.jpg,one green apple surrounded by a bunch of red apples,True,False,False,34.404,11,0,"shopping, cart, animals, species, directions","are, are, are, looking","same, different",,
+229,114/1.jpg,one red apple surrounded by a bunch of green apples,False,True,False,32.588,11,0,"shopping, cart, animals, species, directions","are, are, are, looking","different, same",,
+514,257/0.jpg,an adult is reading to their young child,False,True,False,34.654,5,0,"water, vessel",is,,,
+515,257/1.jpg,their young child is reading to an adult,True,False,False,34.719,5,8,"vessel, water",is,,,
+128,64/0.jpg,the dog's leg is on the person's torso,False,True,False,34.583,5,23,"bodies, head",share,,,
+129,64/1.jpg,the person's leg is on the dog's torso,True,False,False,25.950,5,15,"bodies, head",share,,,
+347,173/1.jpg,a target is on an apple,False,True,False,35.450,10,9,"worker, something, undershirt, collar","wears, striped",white,,
+346,173/0.jpg,an apple is on a target,True,False,False,35.631,10,11,"worker, something, undershirt, collar","wears, striped",white,,
+34,17/0.jpg,there are more ladybugs than flowers,False,True,False,31.620,7,0,"person, grid","seen, has",,,
+35,17/1.jpg,there are more flowers than ladybugs,True,False,False,31.294,7,23,"person, grid","seen, has",,,
+39,19/1.jpg,there is more empty space than dirt in the jar,False,True,False,42.642,2,9,"head, clouds",,,,
+38,19/0.jpg,there is more dirt than empty space in the jar,True,False,False,40.965,2,6,"clouds, head",,,,
+365,182/1.jpg,the person on the right is holding the phone and the person on the left is staring at it,True,False,False,46.247,2,18,feet,standing,,,
+364,182/0.jpg,the person on the left is holding the phone and the person on the right is staring at it,False,True,False,37.437,3,13,"feet, standing",,,,
+313,156/1.jpg,a black dog is holding a toy next to a more lightly-colored dog,False,True,False,40.510,6,6,"sunglasses, hair",have,,,
+312,156/0.jpg,a more lightly-colored dog is holding a toy next to a black dog,True,False,False,38.031,6,15,"hair, sunglasses",have,,,
+381,190/1.jpg,the shrimp are cooked then the shrimp are peeled,False,True,False,35.868,9,1,"number, things, plate, number, sides",,"odd, sweet, even",,
+380,190/0.jpg,the shrimp are peeled then the shrimp are cooked,True,False,False,36.068,8,0,"number, things, plate, number, sides",,"even, sweet, odd",,
+418,209/0.jpg,the cube is smaller than the shape whose lateral faces meet at a vertex,False,True,False,37.796,9,2,"living, thing, front, thing",,"large, large, non-living",,
+419,209/1.png,the shape whose lateral faces meet at a vertex is smaller than the cube,True,False,False,37.339,9,10,"thing, front, living, thing",,"large, non-living, large",,
+213,106/1.jpg,someone is wearing a yellow hat and black shirt,True,False,False,46.828,3,5,,racing,,,
+212,106/0.jpg,someone is wearing a black hat and yellow shirt,False,True,False,46.343,3,15,,racing,,,
+605,302/1.jpg,There is a birthday cake for a mouse,False,True,False,42.631,3,7,someone,"is, overdoing",,,
+604,302/0.jpg,There is a mouse cake for a birthday,True,False,False,38.831,4,15,someone,"is, doing",,,
