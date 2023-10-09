@@ -158,37 +158,10 @@ def merge_punct(doc):
             retokenizer.merge(span, attrs=attrs)
     return doc
 
+def get_deps_diff(s1, s2, nlp):
 
-#%%
-METEOR_scores_0 = []
-METEOR_scores_1 = []
-METEOR_with_caption = {
-    # TO SIMRAN: USE THIS
-}
-from nltk.translate import meteor_score
-from nltk import word_tokenize
-import spacy
-from tqdm import tqdm
-nlp = spacy.load('en_core_web_lg')
-nlp.add_pipe('merge_noun_chunks')
-# no pipeline to merge any punctuations, so used the code from the displacy visualizer (merge_punct)
-# https://stackoverflow.com/questions/65083559/how-to-write-code-to-merge-punctuations-and-phrases-using-spacy
-stog = load_model()
-for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosine_distance_paired, caption_info_serialize, caption_0_hats, caption_1_hats))):
-    caption_pair = caption['caption_pair']
-    
-    caption_pair_amr = caption['amr']
-    tree1 = get_amr_tree(caption_pair_amr[0])
-    tree2 = get_amr_tree(caption_pair_amr[1])
-    amr_diffs = compare_amr_trees(tree1, tree2)
-
-    METEORscore0 = meteor_score.meteor_score([word_tokenize(caption_pair[0])],word_tokenize(caption_0_hat))
-    METEORscore1 = meteor_score.meteor_score([word_tokenize(caption_pair[1])],word_tokenize(caption_1_hat)) #nltk.translate.bleu_score.sentence_bleu([caption_pair[1].split()], caption_1_hat.split())
-    METEOR_scores_0.append(METEORscore0)
-    METEOR_scores_1.append(METEORscore1)
-
-    doc0 = nlp(caption_pair[0])
-    doc1 = nlp(caption_pair[1])
+    doc0 = nlp(s1)
+    doc1 = nlp(s2)
 
     doc0 = merge_punct(doc0)
     doc1 = merge_punct(doc1)
@@ -201,18 +174,76 @@ for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosi
     dep1_notin_dep0 = dep1 - dep0
     diff_dep = dep0.symmetric_difference(dep1)
     len_sym_diff = len(diff_dep)
-
     
+    return {
+            'common relation': dep0_common_dep1,
+            'unique relation in tree1': dep0_notin_dep1,
+            'unique relation in tree2': dep1_notin_dep0,
+            'symmetric_diff_len': len_sym_diff
+        }
+
+from nltk.tree import Tree
+def get_cons_diff(tree1, tree2):
+    # Convert strings to NLTK Trees
+    tree1 = Tree.fromstring(tree1)
+    tree2 = Tree.fromstring(tree2)
+
+    # Get all nodes in the trees
+    nodes1 = set([subtree.label() for subtree in tree1.subtrees()])
+    nodes2 = set([subtree.label() for subtree in tree2.subtrees()])
+
+    # Find unique and common nodes
+    unique_nodes_len = len(set(nodes1).symmetric_difference(set(nodes2)))
+    common_nodes = list(set(nodes1).intersection(set(nodes2)))
+    n1_notin_n2 = nodes1-nodes2
+    n2_notin_n1 = nodes2-nodes1
+
+    return {
+            'common nodes': common_nodes,
+            'unique nodes in tree1': n1_notin_n2,
+            'unique nodes in tree2': n2_notin_n1,
+            'symmetric_diff_len': unique_nodes_len
+        }
+
+
+#%%
+METEOR_scores_0 = []
+METEOR_scores_1 = []
+METEOR_with_caption = {
+    # TO SIMRAN: USE THIS
+}
+from nltk.translate import meteor_score
+from nltk import word_tokenize
+import spacy
+from tqdm import tqdm
+
+nlp = spacy.load('en_core_web_lg')
+nlp.add_pipe('merge_noun_chunks')
+# no pipeline to merge any punctuations, so used the code from the displacy visualizer (merge_punct)
+# https://stackoverflow.com/questions/65083559/how-to-write-code-to-merge-punctuations-and-phrases-using-spacy
+stog = load_model()
+for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosine_distance_paired, caption_info_serialize, caption_0_hats, caption_1_hats))):
+    caption_pair = caption['caption_pair']
+    
+    caption_pair_amr = caption['amr']
+    cons_tree_pair = caption['constituency']
+
+    METEORscore0 = meteor_score.meteor_score([word_tokenize(caption_pair[0])],word_tokenize(caption_0_hat))
+    METEORscore1 = meteor_score.meteor_score([word_tokenize(caption_pair[1])],word_tokenize(caption_1_hat)) #nltk.translate.bleu_score.sentence_bleu([caption_pair[1].split()], caption_1_hat.split())
+    METEOR_scores_0.append(METEORscore0)
+    METEOR_scores_1.append(METEORscore1)
+
+    deps_diff = get_deps_diff(caption_pair[0],caption_pair[1], nlp)
+    cons_diff = get_cons_diff(cons_tree_pair[0], cons_tree_pair[1])
+    amr_diffs = compare_amr_trees(get_amr_tree(caption_pair_amr[0]), get_amr_tree(caption_pair_amr[1]))
+
     METEOR_with_caption[caption['id']*2] = {
         'METEOR_score': METEORscore0, 
         'original': caption_pair[0], 
         'amr_reconstruct': caption_0_hat, 
         'cos_score_with_counterpart': float(cos), 
-        'dependency_diff': {
-            'common relation': dep0_common_dep1,
-            'unique relation': dep0_notin_dep1,
-            'symmetric_diff_len': len_sym_diff
-        },
+        'cons_diff': cons_diff,
+        'dependency_diff': deps_diff,
     'amr_diffs': amr_diffs}
 
     METEOR_with_caption[caption['id']*2+1] = {
@@ -220,11 +251,8 @@ for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosi
         'original': caption_pair[1], 
         'amr_reconstruct': caption_1_hat, 
         'cos_score_with_counterpart': float(cos), 
-        'dependency_diff': {
-            'common relation': dep0_common_dep1,
-            'unique relation': dep1_notin_dep0,
-            'symmetric_diff_len': len_sym_diff
-        },
+        'cons_diff': cons_diff,
+        'dependency_diff': deps_diff,
         'amr_diffs': amr_diffs}
 
 #%%
