@@ -138,6 +138,23 @@ def set_default(obj):
 
 # with open('tree_dump.json', 'r') as infile:
 #     caption_info_serialize = json.load(infile)
+def merge_punct(doc):
+    spans = []
+    for word in doc[:-1]:
+        if word.is_punct or not word.nbor(1).is_punct:
+            continue
+        start = word.i
+        end = word.i + 1
+        while end < len(doc) and doc[end].is_punct:
+            end += 1
+        span = doc[start:end]
+        spans.append((span, word.tag_, word.lemma_, word.ent_type_))
+    with doc.retokenize() as retokenizer:
+        for span, tag, lemma, ent_type in spans:
+            attrs = {"tag": tag, "lemma": lemma, "ent_type": ent_type}
+            retokenizer.merge(span, attrs=attrs)
+    return doc
+
 
 #%%
 METEOR_scores_0 = []
@@ -150,6 +167,9 @@ from nltk import word_tokenize
 import spacy
 from tqdm import tqdm
 nlp = spacy.load('en_core_web_lg')
+nlp.add_pipe('merge_noun_chunks')
+# no pipeline to merge any punctuations, so used the code from the displacy visualizer (merge_punct)
+# https://stackoverflow.com/questions/65083559/how-to-write-code-to-merge-punctuations-and-phrases-using-spacy
 stog = load_model()
 for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosine_distance_paired, caption_info_serialize, caption_0_hats, caption_1_hats))):
     caption_pair = caption['caption_pair']
@@ -167,10 +187,13 @@ for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosi
     doc0 = nlp(caption_pair[0])
     doc1 = nlp(caption_pair[1])
 
-    pos0 = set({token0.text: token0.dep_ for token0 in doc0}.items())
-    pos1 = set({token1.text: token1.dep_ for token1 in doc1}.items())
+    doc0 = merge_punct(doc0)
+    doc1 = merge_punct(doc1)
 
-    diff_pos = pos0.symmetric_difference(pos1)
+    dep0 = set({token0.text: token0.dep_ for token0 in doc0}.items())
+    dep1 = set({token1.text: token1.dep_ for token1 in doc1}.items())
+
+    diff_pos = dep0.symmetric_difference(dep1)
     
     METEOR_with_caption[caption['id']*2] = {
         'METEOR_score': METEORscore0, 
