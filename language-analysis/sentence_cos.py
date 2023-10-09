@@ -105,6 +105,8 @@ def compare_amr_trees(tree1, tree2):
     unique_to_tree1_relations = relations1 - relations2
     unique_to_tree2_relations = relations2 - relations1
 
+    symmetric_diff = relations1.symmetric_difference(relations2)
+    len_symmetric_diff = len(symmetric_diff)
     return {
         'common_nodes': common_nodes,
         'unique_to_tree1_nodes': unique_to_tree1_nodes,
@@ -112,6 +114,7 @@ def compare_amr_trees(tree1, tree2):
         'common_relations': common_relations,
         'unique_to_tree1_relations': unique_to_tree1_relations,
         'unique_to_tree2_relations': unique_to_tree2_relations,
+        'number_of_symmetric_diffs': len_symmetric_diff
     }
 
 def compare_nodes(amr1, amr2):
@@ -193,14 +196,23 @@ for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosi
     dep0 = set({token0.text: token0.dep_ for token0 in doc0}.items())
     dep1 = set({token1.text: token1.dep_ for token1 in doc1}.items())
 
-    diff_pos = dep0.symmetric_difference(dep1)
+    dep0_common_dep1 = dep0.intersection(dep1)
+    dep0_notin_dep1 = dep0 - dep1
+    dep1_notin_dep0 = dep1 - dep0
+    diff_dep = dep0.symmetric_difference(dep1)
+    len_sym_diff = len(diff_dep)
+
     
     METEOR_with_caption[caption['id']*2] = {
         'METEOR_score': METEORscore0, 
         'original': caption_pair[0], 
         'amr_reconstruct': caption_0_hat, 
         'cos_score_with_counterpart': float(cos), 
-        'dependency_diff': list(diff_pos),
+        'dependency_diff': {
+            'common relation': dep0_common_dep1,
+            'unique relation': dep0_notin_dep1,
+            'symmetric_diff_len': len_sym_diff
+        },
     'amr_diffs': amr_diffs}
 
     METEOR_with_caption[caption['id']*2+1] = {
@@ -208,7 +220,11 @@ for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosi
         'original': caption_pair[1], 
         'amr_reconstruct': caption_1_hat, 
         'cos_score_with_counterpart': float(cos), 
-        'dependency_diff': list(diff_pos), 
+        'dependency_diff': {
+            'common relation': dep0_common_dep1,
+            'unique relation': dep1_notin_dep0,
+            'symmetric_diff_len': len_sym_diff
+        },
         'amr_diffs': amr_diffs}
 
 #%%
