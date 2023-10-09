@@ -176,10 +176,10 @@ def get_deps_diff(s1, s2, nlp):
     len_sym_diff = len(diff_dep)
     
     return {
-            'common relation': dep0_common_dep1,
-            'unique relation in tree1': dep0_notin_dep1,
-            'unique relation in tree2': dep1_notin_dep0,
-            'symmetric_diff_len': len_sym_diff
+            'common_relations': dep0_common_dep1,
+            'unique_to_tree1_relations': dep0_notin_dep1,
+            'unique_to_tree2_relations': dep1_notin_dep0,
+            'number_of_symmetric_diffs': len_sym_diff
         }
 
 from nltk.tree import Tree
@@ -199,10 +199,10 @@ def get_cons_diff(tree1, tree2):
     n2_notin_n1 = nodes2-nodes1
 
     return {
-            'common nodes': common_nodes,
-            'unique nodes in tree1': n1_notin_n2,
-            'unique nodes in tree2': n2_notin_n1,
-            'symmetric_diff_len': unique_nodes_len
+            'common_nodes': common_nodes,
+            'unique_to_tree1_nodes': n1_notin_n2,
+            'unique_to_tree2_nodes': n2_notin_n1,
+            'number_of_symmetric_diffs': unique_nodes_len
         }
 
 
@@ -242,17 +242,17 @@ for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosi
         'original': caption_pair[0], 
         'amr_reconstruct': caption_0_hat, 
         'cos_score_with_counterpart': float(cos), 
-        'cons_diff': cons_diff,
-        'dependency_diff': deps_diff,
-    'amr_diffs': amr_diffs}
+        'cons_diffs': cons_diff,
+        'dependency_diffs': deps_diff,
+        'amr_diffs': amr_diffs}
 
     METEOR_with_caption[caption['id']*2+1] = {
         'METEOR_score': METEORscore1, 
         'original': caption_pair[1], 
         'amr_reconstruct': caption_1_hat, 
         'cos_score_with_counterpart': float(cos), 
-        'cons_diff': cons_diff,
-        'dependency_diff': deps_diff,
+        'cons_diffs': cons_diff,
+        'dependency_diffs': deps_diff,
         'amr_diffs': amr_diffs}
 
 #%%
