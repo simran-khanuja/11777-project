@@ -1,5 +1,12 @@
 import json
-with open("/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.json", "r") as f:
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--read_path', type=str, default='/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.json')
+parser.add_argument('--dump_path', type=str, default='/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.csv')
+
+args = parser.parse_args()
+
+with open(args.read_path, "r") as f:
     wino_scores = json.load(f)
 
 rows = {}
@@ -41,7 +48,7 @@ for i in range(800):
 import csv
 columns = ["True Similarity", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "Text Retrieval", "Image Retrieval"]
 
-with open('/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.csv', 'w') as f:
+with open(args.dump_path, 'w') as f:
     write = csv.writer(f)
     write.writerow(columns)
     for i in range(800):
