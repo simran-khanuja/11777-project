@@ -1,6 +1,12 @@
 import json
-import csv
-with open("zeno_code/unimodal_scores/winoground_uni-cls.json", "r") as f:
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--read_path', type=str, default='/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.json')
+parser.add_argument('--dump_path', type=str, default='/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.csv')
+
+args = parser.parse_args()
+
+with open(args.read_path, "r") as f:
     wino_scores = json.load(f)
 
 rows = {}

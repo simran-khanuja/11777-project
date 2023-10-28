@@ -160,7 +160,7 @@ project.upload_system(df_system, name="CLIP-b32", id_column="id", output_column=
 
 ########################### ViLT COCO ########################
 # read in your data
-df_system = pd.read_csv("viltfinetunecoco.csv")
+df_system = pd.read_csv("zeno_code/vilt_scores/viltfinetunecoco.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index

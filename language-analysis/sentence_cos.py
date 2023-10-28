@@ -216,12 +216,22 @@ from nltk.translate import meteor_score
 from nltk import word_tokenize
 import spacy
 from tqdm import tqdm
+mscores_baseline = []
+for caption in caption_info_serialize:
+    caption0, caption1 = caption['caption_pair']
+    mscores_baseline.append(meteor_score.meteor_score([word_tokenize(caption0)],word_tokenize(caption1)))
+print(sum(mscores_baseline)/len(mscores_baseline))
+
+
+#%%
 
 nlp = spacy.load('en_core_web_lg')
 nlp.add_pipe('merge_noun_chunks')
 # no pipeline to merge any punctuations, so used the code from the displacy visualizer (merge_punct)
 # https://stackoverflow.com/questions/65083559/how-to-write-code-to-merge-punctuations-and-phrases-using-spacy
 stog = load_model()
+
+
 for ind, (cos, caption, caption_0_hat, caption_1_hat) in tqdm(enumerate(zip(cosine_distance_paired, caption_info_serialize, caption_0_hats, caption_1_hats))):
     caption_pair = caption['caption_pair']
     
@@ -264,4 +274,20 @@ with open('sentence_METEOR_amr_reconstruction.json','w') as f:
 av0=sum(METEOR_scores_0)/len(METEOR_scores_0)
 av1=sum(METEOR_scores_1)/len(METEOR_scores_1)
 print((av0+av1)/2)
+# %%
+import json
+with open('sentence_METEOR_amr_reconstruction.json','r') as f:
+    sent_info = json.load(f)
+
+sent_info = {k: v for k,v in sorted(sent_info.items(),key=lambda x: x[1]['METEOR_score'])} 
+
+# %%
+sent_info['381']
+#%%
+i = 0
+for k,v in sent_info.items():
+    print(v['original'],"\t", v['amr_reconstruct'], "\t", f"{v['METEOR_score']:.3f}")
+    i+=1
+    if i == 10:
+        break
 # %%
