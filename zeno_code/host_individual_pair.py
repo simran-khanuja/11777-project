@@ -65,3 +65,21 @@ df_system = pd.read_csv("zeno_code/unimodal_scores/uni-cls.csv")
 df_system["id"] = df_system.index
 df_system["Image-and-Text Retrieval"] = df_system["Image Retrieval"] & df_system["Text Retrieval"]
 project.upload_system(df_system, name="RoBERTa-Dinov2 (large)", id_column="id", output_column="Image-and-Text Retrieval")
+
+######################## CLIP base ########################
+# read in your data
+df_system = pd.read_csv("wino_clip_base.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+df_system["Image-and-Text Retrieval"] = df_system["Image Retrieval"] & df_system["Text Retrieval"]
+project.upload_system(df_system, name="CLIP-b32", id_column="id", output_column="Image-and-Text Retrieval")
+
+######################## ViLT coco ########################
+# read in your data
+df_system = pd.read_csv("viltfinetunecoco.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+df_system["Image-and-Text Retrieval"] = df_system["Image Retrieval"] & df_system["Text Retrieval"]
+project.upload_system(df_system, name="ViLT-b32 COCO", id_column="id", output_column="Image-and-Text Retrieval")
