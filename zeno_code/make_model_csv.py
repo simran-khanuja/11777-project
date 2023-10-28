@@ -1,8 +1,10 @@
 import json
-with open("/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.json", "r") as f:
+import csv
+with open("zeno_code/unimodal_scores/winoground_uni-cls.json", "r") as f:
     wino_scores = json.load(f)
 
 rows = {}
+group_rows = {}
 for i in range(800):
     img_text = wino_scores[str(int(i/2))]
     c0_i0 = float(img_text["c0_i0"])
@@ -38,11 +40,22 @@ for i in range(800):
 
 
 # Write to csv file
-import csv
-columns = ["True Similarity", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "Text Retrieval", "Image Retrieval"]
 
-with open('/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.csv', 'w') as f:
+# columns = ["True Similarity", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "Text Retrieval", "Image Retrieval"]
+
+# with open('zeno_code/blip2scores/blip2coco.csv', 'w') as f:
+#     write = csv.writer(f)
+#     write.writerow(columns)
+#     for i in range(800):
+#         write.writerow(rows[i])
+
+for row in rows:
+    if row%2==0:
+        group_rows[row/2] = [rows[row][3] & rows[row+1][3], rows[row][4] & rows[row+1][4]]
+
+with open('zeno_code/unimodal_scores/uni-cls_grp.csv', 'w') as f:
     write = csv.writer(f)
-    write.writerow(columns)
-    for i in range(800):
-        write.writerow(rows[i])
+    write.writerow(["Group Text Retrieval", "Group Image Retrieval"])
+    for i in range(400):
+        write.writerow(group_rows[i])
+    
