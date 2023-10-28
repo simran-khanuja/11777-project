@@ -29,7 +29,7 @@ project.upload_dataset(df, id_column="index", data_column='image',
                        label_column="caption")
 
 ########################### Unimodal ########################
-df_system = pd.read_csv("zeno_code/unimodal_scores/unimodal.csv")
+df_system = pd.read_csv("zeno_code/unimodal_scores/uni-cls.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index

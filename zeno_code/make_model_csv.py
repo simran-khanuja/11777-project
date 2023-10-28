@@ -1,5 +1,5 @@
 import json
-with open("zeno_code/clip_scores/clip-g-14.json", "r") as f:
+with open("zeno_code/unimodal_scores/winoground_uni-cls.json", "r") as f:
     wino_scores = json.load(f)
 
 rows = {}
@@ -41,7 +41,7 @@ for i in range(800):
 import csv
 columns = ["True Similarity", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "Text Retrieval", "Image Retrieval"]
 
-with open('zeno_code/clip_scores/clip-g-14.csv', 'w') as f:
+with open('zeno_code/unimodal_scores/uni-cls.csv', 'w') as f:
     write = csv.writer(f)
     write.writerow(columns)
     for i in range(800):

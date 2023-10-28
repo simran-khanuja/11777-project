@@ -59,7 +59,7 @@ project.upload_system(df_system, name="CLIP-G-14", id_column="id", output_column
 
 ######################## Unimodal ########################
 # read in your data
-df_system = pd.read_csv("zeno_code/unimodal_scores/unimodal.csv")
+df_system = pd.read_csv("zeno_code/unimodal_scores/uni-cls.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index
