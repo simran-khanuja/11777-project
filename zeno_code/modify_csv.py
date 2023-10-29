@@ -20,9 +20,11 @@ for i in range(0, len(df), 2):
         "caption2": row2["caption"],
         "Intra-img Similarity": row1["Intra-img Similarity"],
         "Intra-caption Similarity": row1["Intra-caption Similarity"],
+        "Avg. Phrase Grounding": row1["Avg. Phrase Grounding"],
         "Avg. Perplexity": row1["Avg. Perplexity"],
         "PPL Difference": row1["PPL Difference"],
-        "Avg. AMR Length": row1["Avg. AMR Length"]
+        "Avg. AMR Length": row1["Avg. AMR Length"],
+        "Avg. Object Relations": row1["Avg. Object Relations"]
     }
 
     # Add the new row to the list

@@ -7,7 +7,7 @@ ZENO_API_KEY = "zen_PP8HjtbljTipOMOGBOG2nl6R5IHsSVbxhgOz14vyquw"
 client = ZenoClient(ZENO_API_KEY)
 
 # read in your data 
-df = pd.read_csv("zeno_code/metadata_individual_pair.csv")
+df = pd.read_csv("zeno_code/metadata_no_model.csv")
 
 # Explicitly save the index as a column to upload.
 df["id"] = df.index
@@ -32,7 +32,7 @@ project.upload_dataset(df, id_column="index", data_column='image',
                        label_column="caption")
 
 ######################## BLIP2 Pretrain ########################
-df_system = pd.read_csv("zeno_code/blip2scores/blip2pretrain.csv")
+df_system = pd.read_csv("blip-models/blip2pretrain.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index
@@ -41,7 +41,7 @@ project.upload_system(df_system, name="BLIP-2 Pretrain", id_column="id", output_
 
 
 ######################## BLIP2 COCO ########################
-df_system = pd.read_csv("zeno_code/blip2scores/blip2coco.csv")
+df_system = pd.read_csv("blip-models/blip2coco.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index
@@ -83,3 +83,21 @@ df_system = pd.read_csv("zeno_code/vilt_scores/viltfinetunecoco.csv")
 df_system["id"] = df_system.index
 df_system["Image-and-Text Retrieval"] = df_system["Image Retrieval"] & df_system["Text Retrieval"]
 project.upload_system(df_system, name="ViLT-b32 COCO", id_column="id", output_column="Image-and-Text Retrieval")
+
+######################## BLIP base ########################
+# read in your data
+df_system = pd.read_csv("blip-models/blipbase.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+df_system["Image-and-Text Retrieval"] = df_system["Image Retrieval"] & df_system["Text Retrieval"]
+project.upload_system(df_system, name="BLIP base", id_column="id", output_column="Image-and-Text Retrieval")
+
+######################## BLIP large ########################
+# read in your data
+df_system = pd.read_csv("blip-models/bliplarge.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+df_system["Image-and-Text Retrieval"] = df_system["Image Retrieval"] & df_system["Text Retrieval"]
+project.upload_system(df_system, name="BLIP large", id_column="id", output_column="Image-and-Text Retrieval")
