@@ -184,3 +184,84 @@ df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"]
 df_system = df_system.drop(columns=["Text Retrieval", "Image Retrieval", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "True Similarity"])
 
 project.upload_system(df_system, name="ViLT-b32 COCO", id_column="id", output_column="Group Image-and-Text Retrieval")
+
+############################ BLIP base ########################
+# read in your data
+df_system = pd.read_csv("zeno_code/blip_scores/blipbase.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+
+# initialize empty columns in df_system
+group_text_retrieval = []
+group_image_retrieval = []
+for i in range(len(df_system["Text Retrieval"])):
+    if i%2==0:
+        group_text_retrieval.append(df_system["Text Retrieval"][i] & df_system["Text Retrieval"][i+1])
+        group_image_retrieval.append(df_system["Image Retrieval"][i] & df_system["Image Retrieval"][i+1])
+    else:
+        group_text_retrieval.append(df_system["Text Retrieval"][i] & df_system["Text Retrieval"][i-1])
+        group_image_retrieval.append(df_system["Image Retrieval"][i] & df_system["Image Retrieval"][i-1])
+
+df_system["Group Text Retrieval"] = group_text_retrieval
+df_system["Group Image Retrieval"] = group_image_retrieval
+df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"] & df_system["Group Text Retrieval"]
+
+# remove text and image retrieval columns
+df_system = df_system.drop(columns=["Text Retrieval", "Image Retrieval", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "True Similarity"])
+
+project.upload_system(df_system, name="BLIP base", id_column="id", output_column="Group Image-and-Text Retrieval")
+
+########################### BLIP large ########################
+# read in your data
+df_system = pd.read_csv("zeno_code/blip_scores/bliplarge.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+
+# initialize empty columns in df_system
+group_text_retrieval = []
+group_image_retrieval = []
+for i in range(len(df_system["Text Retrieval"])):
+    if i%2==0:
+        group_text_retrieval.append(df_system["Text Retrieval"][i] & df_system["Text Retrieval"][i+1])
+        group_image_retrieval.append(df_system["Image Retrieval"][i] & df_system["Image Retrieval"][i+1])
+    else:
+        group_text_retrieval.append(df_system["Text Retrieval"][i] & df_system["Text Retrieval"][i-1])
+        group_image_retrieval.append(df_system["Image Retrieval"][i] & df_system["Image Retrieval"][i-1])
+
+df_system["Group Text Retrieval"] = group_text_retrieval
+df_system["Group Image Retrieval"] = group_image_retrieval
+df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"] & df_system["Group Text Retrieval"]
+
+# remove text and image retrieval columns
+df_system = df_system.drop(columns=["Text Retrieval", "Image Retrieval", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "True Similarity"])
+
+project.upload_system(df_system, name="BLIP large", id_column="id", output_column="Group Image-and-Text Retrieval")
+
+########################### LLaVa ########################
+# read in your data
+df_system = pd.read_csv("zeno_code/llava_scores/llava.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+
+# initialize empty columns in df_system
+group_text_retrieval = []
+group_image_retrieval = []
+for i in range(len(df_system["Text Retrieval"])):
+    if i%2==0:
+        group_text_retrieval.append(df_system["Text Retrieval"][i] & df_system["Text Retrieval"][i+1])
+        group_image_retrieval.append(df_system["Image Retrieval"][i] & df_system["Image Retrieval"][i+1])
+    else:
+        group_text_retrieval.append(df_system["Text Retrieval"][i] & df_system["Text Retrieval"][i-1])
+        group_image_retrieval.append(df_system["Image Retrieval"][i] & df_system["Image Retrieval"][i-1])
+
+df_system["Group Text Retrieval"] = group_text_retrieval
+df_system["Group Image Retrieval"] = group_image_retrieval
+df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"] & df_system["Group Text Retrieval"]
+
+# remove text and image retrieval columns
+df_system = df_system.drop(columns=["Text Retrieval", "Image Retrieval", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "True Similarity"])
+
+project.upload_system(df_system, name="LLaVa-1.5-13b", id_column="id", output_column="Group Image-and-Text Retrieval")

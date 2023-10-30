@@ -77,7 +77,7 @@ df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"]
 project.upload_system(df_system, name="CLIP-G-14", id_column="id", output_column="Group Image-and-Text Retrieval")
 
 ########################### BLIP2 COCO ########################
-df_system = pd.read_csv("blip-models/blip2coco_grp.csv")
+df_system = pd.read_csv("zeno_code/blip2scores/blip2coco_grp.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index
@@ -90,7 +90,7 @@ project.upload_system(df_system, name="BLIP-2 COCO", id_column="id", output_colu
 
 ########################### BLIP2 Pretrain ########################
 # read in your data
-df_system = pd.read_csv("blip-models/blip2pretrain_grp.csv")
+df_system = pd.read_csv("zeno_code/blip2scores/blip2pretrain_grp.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index
@@ -126,7 +126,7 @@ project.upload_system(df_system, name="ViLT-b32 COCO", id_column="id", output_co
 
 ########################### BLIP base ########################
 # read in your data
-df_system = pd.read_csv("blip-models/blipbase_grp.csv")
+df_system = pd.read_csv("zeno_code/blip_scores/blipbase_grp.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index
@@ -136,9 +136,10 @@ df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"]
 # remove text and image retrieval columns
 project.upload_system(df_system, name="BLIP base", id_column="id", output_column="Group Image-and-Text Retrieval")
 
+
 ########################### BLIP large ########################
 # read in your data
-df_system = pd.read_csv("blip-models/bliplarge_grp.csv")
+df_system = pd.read_csv("zeno_code/blip_scores/bliplarge_grp.csv")
 
 # Create an id column to match the base dataset.
 df_system["id"] = df_system.index
@@ -147,3 +148,16 @@ df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"]
 
 # remove text and image retrieval columns
 project.upload_system(df_system, name="BLIP large", id_column="id", output_column="Group Image-and-Text Retrieval")
+
+
+########################### LLaVa ########################
+# read in your data
+df_system = pd.read_csv("zeno_code/llava_scores/llava_grp.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+
+df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"] & df_system["Group Text Retrieval"]
+
+# remove text and image retrieval columns
+project.upload_system(df_system, name="LLava-1.5-13b", id_column="id", output_column="Group Image-and-Text Retrieval")
