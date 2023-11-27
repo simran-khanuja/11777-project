@@ -252,7 +252,6 @@ def inference_winoground():
     print("group score:", group_correct_count/num_samples)
 
     import json
-    pdb.set_trace()
     # wino_llava = {str(d['id']): {k: v for k, v in d.items() if k != 'id'} for d in llava_scores}
     with open("llava_scores.json","w") as f: 
         json.dump({str(d['id']): {"c0_i0": float(d['c0_i0']), "c1_i0": float(d['c1_i0']), "c1_i1": float(d['c1_i1']), "c0_i1": float(d['c0_i1'])} for d in llava_scores},f)
