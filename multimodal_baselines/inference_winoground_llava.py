@@ -1,3 +1,5 @@
+## make sure to clone the llava repo: https://github.com/haotian-liu/LLaVA and install the package
+
 import argparse
 import torch
 
@@ -17,7 +19,7 @@ import pdb
 import numpy as np
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--model-path", type=str, default="facebook/opt-6.7b")
+parser.add_argument("--model-path", type=str, default="liuhaotian/llava-v1.5-13b")
 parser.add_argument("--model-base", type=str, default=None)
 parser.add_argument("--image-file", type=str, required=False)
 parser.add_argument("--device", type=str, default="cuda")
@@ -28,6 +30,8 @@ parser.add_argument("--load-8bit", action="store_true")
 parser.add_argument("--load-4bit", action="store_true")
 parser.add_argument("--debug", action="store_true")
 parser.add_argument("--image-aspect-ratio", type=str, default='pad')
+parser.add_argument("--lang_guide", action="store_true")
+parser.add_argument("--num_queries", type=int, default=1000)
 args = parser.parse_args()
 
 def load_image(image_file):
@@ -53,6 +57,9 @@ def inference_winoground():
 
     model_name = get_model_name_from_path(args.model_path)
     tokenizer, model, image_processor, context_len = load_pretrained_model(args.model_path, args.model_base, model_name, args.load_8bit, args.load_4bit, device=args.device)
+
+    model.lang_guide = args.lang_guide
+    model.num_queries = args.num_queries
 
     if 'llama-2' in model_name.lower():
         conv_mode = "llava_llama_2"
@@ -114,12 +121,12 @@ def inference_winoground():
             roles = ('user', 'assistant')
         else:
             roles = conv.roles
-        text_inp_0 = f"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.\n{roles[0]}: Is caption: '{sample['caption_0']}' the correct description for the image?"
-        text_inp_1 = f"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.\n{roles[0]}: Is caption: '{sample['caption_1']}' the correct description for the image?"
+        text_inp_0 = f"{roles[0]}: Is caption: '{sample['caption_0']}' the correct description for the image?"
+        text_inp_1 = f"{roles[0]}: Is caption: '{sample['caption_1']}' the correct description for the image?"
         # image_inp_0 = f"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. {roles[0]}: Does the caption: '{sample['caption_0']}' describe the first image (A) better, or second image(B) better?"
         # image_inp_1 = f"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. {roles[0]}: Does the caption: '{sample['caption_1']}' describe the first image (A) better, or second image(B) better?"
         
-        print(text_inp_0, text_inp_1)
+        # print(text_inp_0, text_inp_1)
         # print(f"{roles[1]}: ", end="")
         def get_inputs( inp):
             conv = conv_templates[args.conv_mode].copy()
@@ -141,11 +148,11 @@ def inference_winoground():
             stop_str = conv.sep if conv.sep_style != SeparatorStyle.TWO else conv.sep2
             keywords = [stop_str]
             stopping_criteria = KeywordsStoppingCriteria(keywords, tokenizer, input_ids)
-            streamer = TextStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
+            # streamer = TextStreamer(tokenizer, skip_prompt=False, skip_special_tokens=False)
 
-            return conv, input_ids, stop_str, keywords, stopping_criteria, streamer
+            return conv, input_ids, stop_str, keywords, stopping_criteria #, streamer
 
-        conv, input_ids, stop_str, keywords, stopping_criteria, streamer = get_inputs(text_inp_0)
+        conv, input_ids, stop_str, keywords, stopping_criteria  = get_inputs(text_inp_0) #, streamer = get_inputs(text_inp_0)
         with torch.inference_mode():
             outputs = model.generate(
                 input_ids,
@@ -153,7 +160,7 @@ def inference_winoground():
                 do_sample=False,
                 temperature=1e-9,
                 max_new_tokens=2,
-                streamer=streamer,
+                streamer= None,# streamer,
                 use_cache=True,
                 stopping_criteria=[stopping_criteria],
                 return_dict_in_generate=True,
@@ -165,7 +172,7 @@ def inference_winoground():
 
             c0_i0 = prob_yes
 
-        conv, input_ids, stop_str, keywords, stopping_criteria, streamer = get_inputs(text_inp_1)
+        conv, input_ids, stop_str, keywords, stopping_criteria = get_inputs(text_inp_1)
         with torch.inference_mode():
             outputs = model.generate(
                 input_ids,
@@ -173,7 +180,7 @@ def inference_winoground():
                 do_sample=False,
                 temperature=1e-9,
                 max_new_tokens=2,
-                streamer=streamer,
+                streamer=None,
                 use_cache=True,
                 stopping_criteria=[stopping_criteria],
                 return_dict_in_generate=True,
@@ -187,7 +194,7 @@ def inference_winoground():
 
             # print(outputs)
 
-        conv, input_ids, stop_str, keywords, stopping_criteria, streamer = get_inputs(text_inp_0)
+        conv, input_ids, stop_str, keywords, stopping_criteria = get_inputs(text_inp_0)
         with torch.inference_mode():
             outputs = model.generate(
                 input_ids,
@@ -195,7 +202,7 @@ def inference_winoground():
                 do_sample=False,
                 temperature=1e-9,
                 max_new_tokens=2,
-                streamer=streamer,
+                streamer=None,
                 use_cache=True,
                 stopping_criteria=[stopping_criteria],
                 return_dict_in_generate=True,
@@ -208,7 +215,7 @@ def inference_winoground():
             c0_i1 = prob_yes
             # print(outputs)
 
-        conv, input_ids, stop_str, keywords, stopping_criteria, streamer = get_inputs(text_inp_1)
+        conv, input_ids, stop_str, keywords, stopping_criteria = get_inputs(text_inp_1)
         with torch.inference_mode():
             outputs = model.generate(
                 input_ids,
@@ -216,7 +223,7 @@ def inference_winoground():
                 do_sample=False,
                 temperature=1e-9,
                 max_new_tokens=2,
-                streamer=streamer,
+                streamer=None,
                 use_cache=True,
                 stopping_criteria=[stopping_criteria],
                 return_dict_in_generate=True,
@@ -230,7 +237,7 @@ def inference_winoground():
             c1_i1 = prob_yes
             llava_scores.append({"id" : sample["id"], "c0_i0": c0_i0, "c1_i0": c1_i0, "c0_i1": c0_i1, "c1_i1": c1_i1})
 
-    pdb.set_trace()
+    # pdb.set_trace()
     text_correct_count = 0
     image_correct_count = 0
     group_correct_count = 0
