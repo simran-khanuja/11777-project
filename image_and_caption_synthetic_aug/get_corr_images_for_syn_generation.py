@@ -17,7 +17,7 @@ import pickle
 from datasets import Dataset
 from tqdm import tqdm
 import argparse
-
+import traceback
 arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument("--start_index", type=int, default=0)
 arg_parser.add_argument("--end_index", type=int, default=-1)
@@ -193,7 +193,11 @@ for idx, data in tqdm(enumerate(coco_dataset.select(range(start, end))), total=e
     image = data["image"]
     original_caption = data["sentences"]["raw"]
     augmented_caption = data["caption_pair"][1]
-    edited_img, _ = get_edited_image(nlp, image, original_caption, augmented_caption, seed=seed, n_steps=70)
+    try:
+        edited_img, _ = get_edited_image(nlp, image, original_caption, augmented_caption, seed=seed, n_steps=70)
+    except Exception as e:
+        traceback.print_exc()
+        edited_img = None
     if edited_img is None:
         print(f"Failed at {idx} with {original_caption} and {augmented_caption}")
         failure_cases.append(data)
