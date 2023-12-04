@@ -16,6 +16,15 @@ import spacy
 import pickle 
 from datasets import Dataset
 from tqdm import tqdm
+import argparse
+
+arg_parser = argparse.ArgumentParser()
+arg_parser.add_argument("--start_index", type=int, default=0)
+arg_parser.add_argument("--end_index", type=int, default=-1)
+arg_parser.add_argument("--save_path", type=str, default="filtered_dataset_step_3.pkl")
+arg_parser.add_argument("--device", type=str, default="cuda:0")
+arg_parser.add_argument("--save_after", type=int, default=50)
+args = arg_parser.parse_args()
 # Helper functions
 #%%
 def show_mask(mask, ax, random_color=False):
@@ -56,7 +65,7 @@ def show_boxes_on_image(raw_image, boxes):
     plt.show()
 ###############################################################
 #%%
-device = "cuda" if torch.cuda.is_available() else "cpu"
+device = "cuda:1" if torch.cuda.is_available() else "cpu"
 print(device)
 
 owl_processor = OwlViTProcessor.from_pretrained("google/owlvit-base-patch32")
@@ -90,15 +99,20 @@ def get_adj_phrases(nlp, caption):
 
 def get_edited_image(nlp, image, original_caption, augmented_caption, seed: torch.Generator, n_steps: int=100):
     
-    orginal_caption_adjective_nouns = get_adj_phrases(nlp, original_caption)
+    original_caption_adjective_nouns = get_adj_phrases(nlp, original_caption)
         
     augmented_caption_adjective_nouns = get_adj_phrases(nlp, augmented_caption)
-
-    cap_str = [str(noun_adj) for noun_adj in orginal_caption_adjective_nouns]
+    
+    cap_str = [str(noun_adj) for noun_adj in original_caption_adjective_nouns]
     aug_cap_str = [str(noun_adj) for noun_adj in augmented_caption_adjective_nouns]
     # Iterate through all nouns
 
     # Save images and iteratvely use previous edited images
+    if len(cap_str) != len(aug_cap_str):
+        return None, None
+    elif len(cap_str) != 2:
+        return None, None
+
     images_to_paint = [image]
     for i in range(len(cap_str)):
         # print(f"Editing {cap_str[i]} to {aug_cap_str[i]}")
@@ -140,8 +154,10 @@ def get_edited_image(nlp, image, original_caption, augmented_caption, seed: torc
             # No object detected, but this is the second noun, so we can use the original image's mask
             prompt = aug_cap_str[i]
             # print(prompt)
-            object_box = get_object_box(images_to_paint[i-1], cap_str[i])
-            sam_input = sam_processor(images_to_paint[i-1], input_boxes=[object_box], return_tensors="pt").to(device)
+            object_box = get_object_box(image, cap_str[i])
+            if len(object_box) == 0:
+                return None, None
+            sam_input = sam_processor(image, input_boxes=[object_box], return_tensors="pt").to(device)
             with torch.no_grad():
                 output_mask = sam_model(**sam_input, multimask_output=False)
             object_mask = sam_processor.image_processor.post_process_masks(output_mask.pred_masks.cpu(), sam_input["original_sizes"].cpu(), sam_input["reshaped_input_sizes"].cpu())
@@ -162,29 +178,32 @@ def get_edited_image(nlp, image, original_caption, augmented_caption, seed: torc
     return edited_img, augmented_caption
 #%%
 import pickle
-coco_dataset = pickle.load(open("1filtered_dataset_step_2.pkl", "rb"))
+coco_dataset = pickle.load(open("/home/abhinavr/git_clones/11777-project/image_and_caption_synthetic_aug/1filtered_dataset_step_2.pkl", "rb"))
 nlp = spacy.load("en_core_web_lg")
 
 # %%
-seed = torch.Generator(device="cuda")
+print(args)
+seed = torch.Generator(device=args.device)
 failure_cases = []
 failure_count = 0
 new_data = []
-for idx, data in tqdm(enumerate(coco_dataset), total=len(coco_dataset), leave=False, colour="green"):
+start = args.start_index
+end = len(coco_dataset) if args.end_index == -1 else args.end_index
+for idx, data in tqdm(enumerate(coco_dataset.select(range(start, end))), total=end-start+1, leave=False, colour="green"):
     image = data["image"]
     original_caption = data["sentences"]["raw"]
     augmented_caption = data["caption_pair"][1]
-    edited_img, augmented_caption = get_edited_image(nlp, image, original_caption, augmented_caption, seed=seed, n_steps=70)
+    edited_img, _ = get_edited_image(nlp, image, original_caption, augmented_caption, seed=seed, n_steps=70)
     if edited_img is None:
-        print(f"failed at {idx} with {original_caption} and {augmented_caption}")
+        print(f"Failed at {idx} with {original_caption} and {augmented_caption}")
         failure_cases.append(data)
         failure_count += 1
     else:
         data["aug_image"] = edited_img
         new_data.append(data)
-    if (idx+1) % 50 == 0:
+    if (idx+1) % args.save_after == 0:
         new_dataset = Dataset.from_list(new_data)
-        with open("filtered_dataset_step_3.pkl", "wb") as f:
+        with open(args.save_path, "wb") as f:
             pickle.dump(new_dataset, f)
         if failure_count > 0:
             failure_dataset = Dataset.from_list(failure_cases)
@@ -193,7 +212,7 @@ for idx, data in tqdm(enumerate(coco_dataset), total=len(coco_dataset), leave=Fa
         print(f"Saved at {idx}")
 
 new_dataset = Dataset.from_list(new_data)
-with open("filtered_dataset_step_3.pkl", "wb") as f:
+with open(args.save_path, "wb") as f:
     pickle.dump(new_dataset, f)
 if failure_count > 0:
     failure_dataset = Dataset.from_list(failure_cases)
