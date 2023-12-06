@@ -81,7 +81,7 @@ def filter_data_step1_dump(filtered_dataset):
 
     print(f"There are {len(filtered_dataset)} datapoints of MSCOCO captions after filtering")
     
-    with open('1filtered_dataset.pkl', 'wb') as f:
+    with open('filtered_dataset.pkl', 'wb') as f:
         pickle.dump(filtered_dataset, f)
     return filtered_dataset
 
@@ -133,7 +133,7 @@ def filter_by_similarity(filtered_dataset):
             filtered_caption_similarities.append(data)
     filtered_dataset_step_2 = Dataset.from_list(filtered_caption_similarities)
     print(f"There are {len(filtered_dataset_step_2)} datapoints of MSCOCO captions after filtering")
-    with open('1filtered_dataset_step_2.pkl', 'wb') as f:
+    with open('filtered_dataset_step_2.pkl', 'wb') as f:
         pickle.dump(filtered_dataset_step_2, f)
     return filtered_dataset_step_2
 
@@ -143,7 +143,7 @@ dataset['train'] = dataset['train'].sort('imgid')
 
 filtered_dataset = filter_data_step0_multiprocess(dataset)
 filtered_dataset = filter_data_step1_dump(filtered_dataset)
-with open('1filtered_dataset.pkl', 'rb') as f:
+with open('filtered_dataset.pkl', 'rb') as f:
     filtered_dataset = pickle.load(f)
 filtered_dataset_step_2 = filter_by_similarity(filtered_dataset)
 
