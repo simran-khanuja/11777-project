@@ -1,4 +1,10 @@
 #%%
+# *************** Image inpainting credits *******************
+#
+# Code partially borrowed from https://colab.research.google.com/drive/1ViJ-jCPVnPZUcdoD6iW9O9p3udifzYmR?usp=sharing&ref=blog.roboflow.com#scrollTo=kn83B-OQpR2z
+# 
+# Image augmentation credits: Jean de Dieu Nyandwi: https://github.com/Nyandwi
+
 import numpy as np
 import matplotlib.pyplot as plt
 import gc
