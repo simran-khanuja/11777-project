@@ -147,3 +147,27 @@ df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"]
 
 # remove text and image retrieval columns
 project.upload_system(df_system, name="BLIP large", id_column="id", output_column="Group Image-and-Text Retrieval")
+
+########################### CLIP Synthetic ########################
+# read in your data
+df_system = pd.read_csv("zeno_code/wino_synthetic_group.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+
+df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"] & df_system["Group Text Retrieval"]
+
+# remove text and image retrieval columns
+project.upload_system(df_system, name="CLIP base synthetic", id_column="id", output_column="Group Image-and-Text Retrieval")
+
+########################### BLIP-2 Synthetic ########################
+# read in your data
+df_system = pd.read_csv("zeno_code/blip2_coco_syn_grp.csv")
+
+# Create an id column to match the base dataset.
+df_system["id"] = df_system.index
+
+df_system["Group Image-and-Text Retrieval"] = df_system["Group Image Retrieval"] & df_system["Group Text Retrieval"]
+
+# remove text and image retrieval columns
+project.upload_system(df_system, name="BLIP2 COCO synthetic", id_column="id", output_column="Group Image-and-Text Retrieval")

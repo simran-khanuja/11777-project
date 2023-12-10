@@ -2,8 +2,8 @@ import json
 import argparse
 import csv
 parser = argparse.ArgumentParser()
-parser.add_argument('--read_path', type=str, default='/Users/simrankhanuja/Desktop/11777-project/blip-models/blip2pretrain.json')
-parser.add_argument('--dump_path', type=str, default='/Users/simrankhanuja/Desktop/11777-project/blip-models/blip2pretrain.csv')
+parser.add_argument('--read_path', type=str, default='zeno_code/blip2_coco_syn.json')
+parser.add_argument('--dump_path', type=str, default='zeno_code/blip2_coco_syn.csv')
 
 args = parser.parse_args()
 
@@ -50,7 +50,7 @@ for i in range(800):
 
 columns = ["True Similarity", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "Text Retrieval", "Image Retrieval"]
 
-with open('/Users/simrankhanuja/Desktop/11777-project/blip-models/blip2pretrain.csv', 'w') as f:
+with open('zeno_code/blip2_coco_syn.csv', 'w') as f:
     write = csv.writer(f)
     write.writerow(columns)
     for i in range(800):
@@ -60,7 +60,7 @@ for row in rows:
     if row%2==0:
         group_rows[row/2] = [rows[row][3] & rows[row+1][3], rows[row][4] & rows[row+1][4]]
 
-with open('/Users/simrankhanuja/Desktop/11777-project/blip-models/blip2pretrain_grp.csv', 'w') as f:
+with open('zeno_code/blip2_coco_syn_grp.csv', 'w') as f:
     write = csv.writer(f)
     write.writerow(["Group Text Retrieval", "Group Image Retrieval"])
     for i in range(400):
