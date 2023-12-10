@@ -4,6 +4,8 @@ import csv
 parser = argparse.ArgumentParser()
 parser.add_argument('--read_path', type=str, default='zeno_code/blip2_coco_syn.json')
 parser.add_argument('--dump_path', type=str, default='zeno_code/blip2_coco_syn.csv')
+parser.add_argument('--read_path', type=str, default='/Users/simrankhanuja/Desktop/11777-project/wino_clip_base.json')
+parser.add_argument('--dump_prefix', type=str, default='/Users/simrankhanuja/Desktop/11777-project/wino_clip_base')
 
 args = parser.parse_args()
 
@@ -50,7 +52,7 @@ for i in range(800):
 
 columns = ["True Similarity", "Diff from False - Text Retrieval", "Diff from False - Image Retrieval", "Text Retrieval", "Image Retrieval"]
 
-with open('zeno_code/blip2_coco_syn.csv', 'w') as f:
+with open(f'{args.dump_prefix}.csv', 'w') as f:
     write = csv.writer(f)
     write.writerow(columns)
     for i in range(800):
@@ -61,6 +63,7 @@ for row in rows:
         group_rows[row/2] = [rows[row][3] & rows[row+1][3], rows[row][4] & rows[row+1][4]]
 
 with open('zeno_code/blip2_coco_syn_grp.csv', 'w') as f:
+with open(f'{args.dump_prefix}_grp.csv', 'w') as f:
     write = csv.writer(f)
     write.writerow(["Group Text Retrieval", "Group Image Retrieval"])
     for i in range(400):
